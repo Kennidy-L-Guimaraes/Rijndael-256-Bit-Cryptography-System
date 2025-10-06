@@ -20,10 +20,6 @@ object FrmRijndael256: TFrmRijndael256
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 200
-    ExplicitTop = 120
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object LblRijndael254bits: TLabel
       Left = 16
       Top = 286
@@ -64,8 +60,6 @@ object FrmRijndael256: TFrmRijndael256
       Top = 104
       Width = 465
       Height = 161
-      Lines.Strings = (
-        '')
       ScrollBars = ssVertical
       TabOrder = 0
     end
@@ -74,34 +68,34 @@ object FrmRijndael256: TFrmRijndael256
       Top = 307
       Width = 465
       Height = 161
-      Lines.Strings = (
-        '')
       ScrollBars = ssVertical
       TabOrder = 1
     end
-    object Button1: TButton
+    object Btn_Encrypt: TButton
       Left = 16
       Top = 474
       Width = 75
       Height = 25
-      Caption = 'Button1'
+      Caption = 'Encrypt'
       TabOrder = 2
+      OnClick = Btn_EncryptClick
     end
-    object Button2: TButton
+    object Btn_Decrypt: TButton
       Left = 97
       Top = 474
       Width = 75
       Height = 25
-      Caption = 'Button1'
+      Caption = 'Decrypt'
       TabOrder = 3
     end
-    object Button3: TButton
+    object Btn_GRS: TButton
       Left = 178
       Top = 474
-      Width = 75
+      Width = 135
       Height = 25
-      Caption = 'Button1'
+      Caption = 'Generate Random Salt'
       TabOrder = 4
+      OnClick = Btn_GRSClick
     end
     object EdtPassword: TEdit
       Left = 16
