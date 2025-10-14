@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="CipherText.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unitciphertext.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitCipherText"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="27"/>
+        <CursorPos X="52" Y="42"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="13">
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="26" Column="62"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="17" Column="61"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="18" Column="61"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="17" Column="61"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="14" Column="51"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="16" Column="62"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="17" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="18" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="19" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="22" Column="63"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="21" Column="63"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="9" Column="72"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="14" Column="53"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="16" Column="66"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
