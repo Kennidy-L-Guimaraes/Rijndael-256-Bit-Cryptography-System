@@ -5,7 +5,8 @@ unit unitCipherText;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Buttons;
 
 type
 
@@ -15,12 +16,12 @@ type
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
-    Image4: TImage;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Panel1: TPanel;
+    Panel2: TPanel;
     Pnl_CipherText1: TPanel;
     Pnl_CipherText2: TPanel;
     Pnl_LoadingCipher: TPanel;
@@ -28,7 +29,11 @@ type
     Pnl_CipherText: TPanel;
     Pnl_LeftMenu: TPanel;
     Pnl_MemCipher1: TPanel;
+    Pnl_MemCipher2: TPanel;
     Shape1: TShape;
+    Shape2: TShape;
+    Shape3: TShape;
+    SpeedButton1: TSpeedButton;
     procedure Image4Click(Sender: TObject);
   private
 
