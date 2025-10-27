@@ -42,6 +42,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCipherText"/>
       </Unit>
+      <Unit>
+        <Filename Value="unittseccipher.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitTSecCipher"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

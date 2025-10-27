@@ -16,6 +16,8 @@ type
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
+    Label10: TLabel;
+    Label11: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -32,6 +34,8 @@ type
     Panel3: TPanel;
     Panel4: TPanel;
     Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
     Pnl_CipherText1: TPanel;
     Pnl_CipherText2: TPanel;
     Pnl_LoadingCipher: TPanel;
@@ -40,12 +44,16 @@ type
     Pnl_LeftMenu: TPanel;
     Pnl_MemCipher1: TPanel;
     Pnl_MemCipher2: TPanel;
+    Pnl_MemCipher3: TPanel;
+    Pnl_MemCipher4: TPanel;
     Shape1: TShape;
     Shape2: TShape;
     Shape3: TShape;
     Shape4: TShape;
     Shape5: TShape;
     Shape6: TShape;
+    Shape7: TShape;
+    Shape8: TShape;
     SpeedButton1: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure Image4Click(Sender: TObject);
@@ -54,6 +62,7 @@ type
     procedure Mem_InputChange(Sender: TObject);
     procedure Mem_InputClick(Sender: TObject);
     procedure NotResize;
+    procedure Hashing;
     procedure Panel1Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
     procedure Pnl_LoadingCipherClick(Sender: TObject);
@@ -115,6 +124,11 @@ begin
   BorderStyle := bsSingle;
 end;
 
+procedure TFrm_CipherText.Hashing;
+begin
+
+end;
+
 procedure TFrm_CipherText.Panel1Click(Sender: TObject);
 begin
 
@@ -130,7 +144,7 @@ begin
 
 end;
 
-procedure TFrm_CipherText.Clear(sender: Tmemo);
+procedure TFrm_CipherText.Clear(Sender: Tmemo);
 begin
  Sender.clear;
  Sender.Font.color := ClWhite;
@@ -139,6 +153,7 @@ end;
 procedure TFrm_CipherText.FormCreate(Sender: TObject);
 begin
   NotResize;
+  Hashing;
 end;
 
 end.
