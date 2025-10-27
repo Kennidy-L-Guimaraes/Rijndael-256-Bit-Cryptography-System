@@ -37,7 +37,7 @@
       <Unit>
         <Filename Value="unitciphertext.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="Frm_CipherText"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCipherText"/>

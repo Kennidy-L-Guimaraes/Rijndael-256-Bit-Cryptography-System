@@ -12,19 +12,19 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="unitciphertext.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="Frm_CipherText"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCipherText"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="21"/>
-        <CursorPos X="37" Y="47"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="66"/>
+        <CursorPos X="19" Y="77"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,123 +32,123 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="9" Column="72"/>
+        <Caret Line="48" Column="37" TopLine="14"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="14" Column="53"/>
+        <Caret Line="39" Column="25" TopLine="17"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="16" Column="66"/>
+        <Caret Line="65" Column="9" TopLine="37"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="25"/>
+        <Caret Line="79" Column="53" TopLine="49"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="35" Column="37" TopLine="24"/>
+        <Caret Line="80" Column="53" TopLine="50"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="24"/>
+        <Caret Line="79" Column="53" TopLine="49"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="35" Column="37" TopLine="23"/>
+        <Caret Line="80" Column="53" TopLine="50"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="34" Column="37" TopLine="22"/>
+        <Caret Line="81" Column="53" TopLine="51"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="33" Column="37" TopLine="21"/>
+        <Caret Line="82" Column="53" TopLine="52"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="32" Column="37" TopLine="21"/>
+        <Caret Line="81" Column="53" TopLine="51"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="33" Column="37" TopLine="21"/>
+        <Caret Line="82" Column="53" TopLine="52"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="35" Column="37" TopLine="22"/>
+        <Caret Line="89" Column="53" TopLine="55"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="18"/>
+        <Caret Line="68" Column="3" TopLine="56"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="35" Column="37" TopLine="18"/>
+        <Caret Line="90" Column="3" TopLine="56"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="18"/>
+        <Caret Line="91" Column="3" TopLine="57"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="37" Column="37" TopLine="18"/>
+        <Caret Line="90" Column="3" TopLine="56"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="18"/>
+        <Caret Line="91" Column="3" TopLine="57"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="39" Column="37" TopLine="19"/>
+        <Caret Line="98" Column="3" TopLine="64"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="38" Column="37" TopLine="18"/>
+        <Caret Line="93" Column="3" TopLine="64"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="37" Column="37" TopLine="18"/>
+        <Caret Line="49" Column="36" TopLine="32"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="36" Column="37" TopLine="18"/>
+        <Caret Line="108" Column="14" TopLine="67"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="39" Column="37" TopLine="19"/>
+        <Caret Line="72" Column="19" TopLine="52"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="42" Column="37" TopLine="20"/>
+        <Caret Line="87" Column="51" TopLine="80"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="41" Column="37" TopLine="19"/>
+        <Caret Line="73" TopLine="70"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="40" Column="37" TopLine="19"/>
+        <Caret Line="111" Column="30" TopLine="85"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="39" Column="37" TopLine="19"/>
+        <Caret Line="114" Column="30" TopLine="88"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="42" Column="37" TopLine="20"/>
+        <Caret Line="113" Column="30" TopLine="87"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="43" Column="37" TopLine="20"/>
+        <Caret Line="119" Column="30" TopLine="88"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="44" Column="37" TopLine="20"/>
+        <Caret Line="92" Column="19" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="46" Column="37" TopLine="21"/>
+        <Caret Line="76" Column="67" TopLine="66"/>
       </Position>
     </JumpHistory>
     <RunParams>
