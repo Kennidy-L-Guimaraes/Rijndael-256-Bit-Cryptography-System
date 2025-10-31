@@ -1,4 +1,4 @@
-unit unitTSecCipher;
+unit unitHash;
 
 {$mode ObjFPC}{$H+}
 
@@ -14,7 +14,7 @@ type
   THashSHA2 = Class
     public
       {PUBLIC DECLARATIONS}
-      function GetHashString(const InputText: string):string;
+      class function GetHashString(const InputText: string):string;
     private
       {PRIVATE DECLARATIONS}
 
@@ -26,7 +26,7 @@ uses
 
 { TSecCipher }
 
-function THashSHA2.GetHashString(const InputText: string):string;
+class function THashSHA2.GetHashString(const InputText: string):string;
 var
 Hash      : TDCP_sha256;
   Digest    : array[0..31] of Byte;

@@ -1,4 +1,4 @@
-unit unitTSecCipher;
+unit unitHash;
 
 {$mode ObjFPC}{$H+}
 

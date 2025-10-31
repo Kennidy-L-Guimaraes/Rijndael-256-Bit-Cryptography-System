@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="dcpcrypt"/>
+      </Item>
+      <Item>
         <PackageName Value="LCL"/>
       </Item>
     </RequiredPackages>
@@ -41,6 +44,15 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCipherText"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unithash.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitHash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unitrhcsalt.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
   </ProjectOptions>
