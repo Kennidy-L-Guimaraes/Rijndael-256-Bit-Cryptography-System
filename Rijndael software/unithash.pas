@@ -5,16 +5,20 @@ unit unitHash;
 interface
 
 uses
-  Classes, SysUtils, Forms, Dialogs, Messages, DCPrijndael, DCPsha256;
+  Classes, SysUtils, Forms, Dialogs, Messages, DCPrijndael, DCPsha256, DCPbase64;
 
 type
 
   { TSecCipher }
 
+  { THashSHA2 }
+
   THashSHA2 = Class
     public
       {PUBLIC DECLARATIONS}
       class function GetHashString(const InputText: string):string;
+      function EncryptAES(const AText, AKey: string): string;
+      //function GenerateRandomIV
     private
       {PRIVATE DECLARATIONS}
 
@@ -44,6 +48,27 @@ begin
     result := HashString;
   finally
     Hash.Free;
+  end;
+end;
+
+function THashSHA2.EncryptAES(const AText, AKey: string): string;
+var
+  Cipher: TDCP_rijndael;
+  KeyHash: string;
+  IV: Array [0..15] of TBytes;
+  Data: string;
+begin
+  Data := UTF8Encode(AText);
+  Cipher := TDCP_rijndael.Create(nil);
+  try
+    KeyHash := (AKey);
+    FillChar(IV, SizeOf(IV), 0);
+    Cipher.Init(KeyHash[1], 256, @IV);
+    Cipher.EncryptCBC(Data[1], Data[1], Length(Data));
+    Result := Base64EncodeStr(Data);
+  finally
+    Cipher.Burn;
+    Cipher.Free;
   end;
 end;
 

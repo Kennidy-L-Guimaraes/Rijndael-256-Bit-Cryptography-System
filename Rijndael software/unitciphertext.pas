@@ -52,7 +52,7 @@ type
     Pnl_MemCipher2: TPanel;
     Pnl_MemCipher3: TPanel;
     Pnl_MemCipher4: TPanel;
-    Shape1: TShape;
+    Shp_Bar: TShape;
     Shape10: TShape;
     Shape2: TShape;
     Shape3: TShape;
@@ -82,6 +82,8 @@ type
     procedure Clear(Sender: TObject);
     procedure Shape7ChangeBounds(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure EncriptText(password: string);
+    procedure ProgressBar;
   private
 
   public
@@ -124,7 +126,7 @@ end;
 
 procedure TFrm_CipherText.NotResize;
 const
-  FIX_HEIGHT = 580;
+  FIX_HEIGHT = 640;
   FIX_WIDTH  = 626;
 begin
   Width  := FIX_WIDTH;
@@ -182,21 +184,60 @@ procedure TFrm_CipherText.SpeedButton1Click(Sender: TObject);
 var
   Salt: TRHC;
   Sha : THashSHA2;
+  FinalPass : string;
 begin
   if (Edt_SecretWord.Text = 'Enter your word') or (Trim(Edt_SecretWord.Text) = '') then
-  begin
-    ShowMessage('For security reasons, please provide us with a password or secret text (FOR SALT). ' +
+     begin
+          ShowMessage('For security reasons, please provide us with a password or secret text (FOR SALT). ' +
                 'This is mandatory so that we can provide the best security.');
-  end
-  else
-  begin
-    Salt := TRHC.Create;
-    Sha  := THashSHA2.Create;
+     end
+     else
+     begin
+        Salt := TRHC.Create;
+        Sha  := THashSHA2.Create;
     try
-      Edt_Salt.Text := Sha.GetHashString(Edt_SecretWord.Text + Salt.RHCHash + Edt_SecretWord.Text);
+       Clear(Mem_Output);
+       Clear(Edt_Salt);
+
+       ProgressBar;
+       FinalPass     := Sha.GetHashString(Edt_SecretWord.Text + Edt_pass.Text + Salt.RHCHash + Edt_pass.Text + Edt_SecretWord.Text);
+       Edt_Salt.Text := FinalPass;
+       Clear(Edt_SecretWord);
+       EncriptText(FinalPass);
     finally
       Salt.Free;
+      sha.Free;
     end;
+    end;
+end;
+
+procedure TFrm_CipherText.EncriptText(password: string);
+var
+  Encript : THashSHA2;
+  EnText    : string;
+begin
+  Encript := THashSHA2.Create;
+  try
+  EnText  := Mem_Input.Text;
+  Mem_Output.Lines.Add(Encript.EncryptAES(EnText, password));
+  finally
+  Encript.free;
+  end;
+end;
+
+
+
+procedure TFrm_CipherText.ProgressBar;
+var
+  i: Integer;
+begin
+  Shp_Bar.Width := 0;
+
+  for i := 0 to Pnl_LoadingCipher.Width do
+  begin
+    Shp_Bar.Width := i;
+    Application.ProcessMessages; // mantém a UI atualizada
+    Sleep(0); // controla a velocidade da animação
   end;
 end;
 
@@ -208,6 +249,7 @@ end;
 
 procedure TFrm_CipherText.Edt_passChange(Sender: TObject);
 begin
+
 
 end;
 

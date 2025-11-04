@@ -248,7 +248,7 @@ begin
   Bk4 := THashSHA2.GetHashString(
     THashSHA2.GetHashString(Bk1) +
     THashSHA2.GetHashString(Bk2) +
-    THashSHA2.GetHashString(Bk3) + RandomBytes()
+    THashSHA2.GetHashString(Bk3)
   );
 
   Result := Bk4;
