@@ -1,83 +1,84 @@
 object Frm_CipherText: TFrm_CipherText
-  Left = 459
-  Height = 640
-  Top = 73
-  Width = 626
+  Left = 556
+  Height = 580
+  Top = 137
+  Width = 589
   Caption = 'Cipher Text'
-  ClientHeight = 640
-  ClientWidth = 626
+  ClientHeight = 580
+  ClientWidth = 589
   Color = 1511693
-  DesignTimePPI = 106
   OnCreate = FormCreate
   Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
-    Height = 640
+    Height = 580
     Top = 0
-    Width = 626
+    Width = 589
     Align = alClient
-    ClientHeight = 640
-    ClientWidth = 626
+    BevelOuter = bvNone
+    ClientHeight = 580
+    ClientWidth = 589
     Color = 1775122
     ParentBackground = False
     ParentColor = False
     TabOrder = 0
     OnClick = Panel1Click
     object Pnl_LeftMenu: TPanel
-      Left = 1
-      Height = 103
-      Top = 1
-      Width = 624
+      Left = 0
+      Height = 93
+      Top = 0
+      Width = 589
       Align = alTop
       BevelOuter = bvNone
-      ClientHeight = 103
-      ClientWidth = 624
+      ClientHeight = 93
+      ClientWidth = 589
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 0
       object Shape2: TShape
-        Left = 17
-        Height = 73
-        Top = 15
-        Width = 592
+        Left = 15
+        Height = 65
+        Top = 14
+        Width = 560
         Anchors = [akTop, akLeft, akRight, akBottom]
         Brush.Color = 1052172
         Pen.Style = psClear
         Shape = stRoundRect
       end
       object Pnl_CipherText: TPanel
-        Left = 32
-        Height = 56
-        Top = 24
-        Width = 144
+        Left = 29
+        Height = 51
+        Top = 22
+        Width = 130
         BevelOuter = bvNone
-        ClientHeight = 56
-        ClientWidth = 144
+        ClientHeight = 51
+        ClientWidth = 130
         Color = 1052172
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
-        object Label2: TLabel
-          Left = 39
-          Height = 16
-          Top = 20
-          Width = 96
+        object Lbl_MenuTextEncrypt: TLabel
+          Left = 35
+          Height = 17
+          Top = 18
+          Width = 95
           Caption = 'Text Encryption'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
-          Font.Height = -14
+          Font.Height = -13
           Font.Name = 'Century Gothic'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentColor = False
           ParentFont = False
         end
-        object Image1: TImage
-          Left = 7
-          Height = 28
-          Top = 14
-          Width = 28
+        object Img_MenuTextEncrypt: TImage
+          Left = 6
+          Height = 25
+          Top = 13
+          Width = 25
           Picture.Data = {
             1754506F727461626C654E6574776F726B47726170686963820C000089504E47
             0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -184,28 +185,34 @@ object Frm_CipherText: TFrm_CipherText
           Proportional = True
         end
       end
+      object Image8: TImage
+        Left = 192
+        Height = 20
+        Top = 112
+        Width = 20
+      end
     end
     object Pnl_MemCipher: TPanel
-      Left = 26
-      Height = 327
-      Top = 186
-      Width = 421
+      Left = 21
+      Height = 296
+      Top = 168
+      Width = 381
       BevelOuter = bvNone
-      ClientHeight = 327
-      ClientWidth = 421
+      ClientHeight = 296
+      ClientWidth = 381
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 1
       object Label5: TLabel
-        Left = 9
+        Left = 8
         Height = 21
-        Top = 8
-        Width = 77
-        Caption = 'Text Input'
+        Top = 7
+        Width = 73
+        Caption = 'Your Text'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -213,120 +220,306 @@ object Frm_CipherText: TFrm_CipherText
         ParentFont = False
       end
       object Panel3: TPanel
-        Left = 9
-        Height = 110
-        Top = 32
-        Width = 399
+        Left = 8
+        Height = 100
+        Top = 29
+        Width = 361
         BevelOuter = bvNone
         Caption = 'Panel3'
-        ClientHeight = 110
-        ClientWidth = 399
+        ClientHeight = 100
+        ClientWidth = 361
         ParentBackground = False
         TabOrder = 0
         OnClick = Panel3Click
         object Shape4: TShape
-          Left = 7
-          Height = 94
-          Top = 8
-          Width = 384
+          Left = 0
+          Height = 86
+          Top = 7
+          Width = 348
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
           Shape = stRoundRect
         end
         object Mem_Input: TMemo
-          Left = 15
-          Height = 72
-          Top = 15
-          Width = 351
+          Left = 8
+          Height = 65
+          Top = 14
+          Width = 318
           BorderStyle = bsNone
           Color = 1052172
           Font.Color = 6442818
-          Font.Height = -15
+          Font.Height = -14
           Font.Name = 'Century Gothic'
           Lines.Strings = (
             'Paste or Type your text here'
           )
-          ParentFont = False
-          TabOrder = 0
           OnChange = Mem_InputChange
           OnClick = Mem_InputClick
+          ParentFont = False
+          TabOrder = 0
         end
       end
       object Panel4: TPanel
-        Left = 9
-        Height = 110
-        Top = 194
-        Width = 399
+        Left = 8
+        Height = 100
+        Top = 176
+        Width = 361
         BevelOuter = bvNone
         Caption = 'Panel4'
-        ClientHeight = 110
-        ClientWidth = 399
+        ClientHeight = 100
+        ClientWidth = 361
         ParentBackground = False
         TabOrder = 1
         OnClick = Panel3Click
         object Shape5: TShape
-          Left = 11
-          Height = 94
-          Top = 8
-          Width = 385
+          Left = 0
+          Height = 86
+          Top = 7
+          Width = 348
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
           Shape = stRoundRect
         end
         object Mem_Output: TMemo
-          Left = 20
-          Height = 72
-          Top = 15
-          Width = 351
+          Left = 8
+          Height = 65
+          Top = 14
+          Width = 318
           BorderStyle = bsNone
           Color = 1052172
           Font.Color = 6442818
-          Font.Height = -15
+          Font.Height = -14
           Font.Name = 'Century Gothic'
           Lines.Strings = (
             'Paste or Type your text here'
           )
-          ParentFont = False
-          TabOrder = 0
           OnChange = Mem_InputChange
           OnClick = Mem_OutputClick
+          ParentFont = False
+          TabOrder = 0
         end
       end
       object Label7: TLabel
-        Left = 9
+        Left = 8
         Height = 21
-        Top = 170
-        Width = 92
-        Caption = 'Text Output'
+        Top = 154
+        Width = 81
+        Caption = 'Encrypted'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
       end
+      object Shape13: TShape
+        Left = 86
+        Height = 21
+        Top = 8
+        Width = 23
+        Anchors = []
+        Brush.Color = 1052172
+        Shape = stRoundRect
+      end
+      object Image6: TImage
+        Cursor = crHandPoint
+        Left = 87
+        Height = 20
+        Hint = 'This is the text to be encrypted: only the plain text content will be encrypted, without line breaks.'#13#10'That means line breaks will not be encrypted, only the raw, direct text.'#13#10'Make sure the content to be encrypted is plain text without extra formatting.'
+        Top = 8
+        Width = 20
+        ParentShowHint = False
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B47726170686963B208000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000086449444154789CED9D698C
+          144514804BF0082AC608BBFD5EEF225189F1C63BFE308AB7C63B7821EA0F138D
+          77F49FC71F4DBC6F7FE2F1C344836EE21F0F5041D79D57BDA0E20F081AAF6840
+          018F6814BC66AAB0CCEB1971255D3557F774F76C7DC9246466BB8EAEAA57EFBD
+          7AF510C2E3F1783C1E8FC7E3F1783C1E8FC7E3F1783C1E8F4708B372AF3DAA34
+          345745C1C98AC27375145EC61FFE377FC7BFF1DFE4DDCEBEC4BC15ECA6223C43
+          49785013BEAB08366889A6954FFCB784EFF0B34AE2E95C56DEFD292566746077
+          4D709596B04C11D65A1D801606A8AA25BCAD2B70A51F9C163095707F25E15925
+          714B5A83601D1C895BB82EAE33EF7E178E6A141CA2085E52845BB31E888481D1
+          8A6071958283C56427DE1F08EFAE8B92DE0E44C2C02845F0D4A45506628DA88D
+          0D5A5BF705FC85CBA97FF09714F6996F552538474C16CCDA837656848F2BC2BF
+          DB7CF1DFB168D114DCA82AE129662C9C65AD632C9CC57FA3096FE267F8D936EB
+          FA5B497CD4AC123B897EC68C0E8096B8B20D31B2915F4C5586877755AF113B54
+          A3F00845F89892B8A98DC15961560C06A21F3172603F45F8656B2F0256B3A167
+          46C4D4D4DB3122A6EA0A2ED0846B5A14615F181ADC57F413D5CAD061ADCC4C25
+          619D92309F6774D66DE23A34C1C54AC2FA1656EA26EE83E8A395E194E1ACEE2A
+          898FE461ACB111CA62B199CACD8352FA95622A30A0247CD6A4A33FB06B24EFB6
+          2A199CC47B569389F325EF83A2ACDA54D30D9CF0C32275D08CCD442D7195BBCD
+          305E4AED8B55DB2683F16E118D3053F7A3BDD964A53C2CCA67F4B9EC0C586696
+          CCD9451414B364CE2E9A60B9D34E8982B345193072C674B6769D624ACE982E0A
+          8E9133A6BBC49722F8865793283A4AC2134E4D25A53DC38C88A966051CA8082F
+          D412AFD184B7B2CB9E67AE21DC3B953AC666A24B4364CD5014DE6B2B515955DB
+          4A784A37E51B23A62889E7373CC39B9B686F5FC5EE8F2E0747119E665389F9AC
+          862785282A4AE2CB596D844A0627C5167C0BD6F5F62F4D4978A01BCD885D2EF6
+          81871745710F97505B1ABDAE1BA34F4BB8CB5676CB1F82A8D3BD2B361E09BEB1
+          AC446DC687E788A2C1A76FD65914C1459D96AB25DEDCD540FC5FA17887C55E67
+          ED082F756CF04F8B22D1703F588E5D6175A7BE29333A008AE00FB748826F35E1
+          1B5AC2AB4AC2E7CD0706AEEBA82D464CD112D75AC4E266B30A771545A11E9060
+          7901517859E7E5E21D8E4D7BA392E179DB3F53A3C1E3D89A76C8FC759D4E102D
+          71A163B0178AA2C0869EEDA59951B163A7E52A82172C33F23B97DC6E1C0D7F62
+          7B79B5088EE9A43DDC17871ABC5414817AE793CFC459EDECA66C2571514299BF
+          55C7F0C866CF6A09D73BC4D61569DB594AC25F667C789AC81BF6D4DA3ADEED49
+          5F95828395849F2774FA47B60B5A79B65681131D9BFBB59DB6A94678947D3F0B
+          4F157913471426AF8E4D691C3419C2BDF91C5D5378B58982C136DA35DFFAE22A
+          7841C7ED3162073E32B0AC92FB45DEB0D7D6A2FD2CCEB55D125FB30D88191F1E
+          CAC40026589E5E0F3A6D9C2D9487821BF36A9376D92E84635995CFC6A3C8133E
+          CFB08B85EEFC561DFBBA08EFB5B9FEF9FB5A0427882EE17DCC567EAE1E600EAD
+          B18A859543C3BD6C8B8960B696F89E5DB38AB5ABDB52A98BF7359B2243437345
+          5ED41D7E8933656B2F2247FE25F6004FD0C692DAA325DE29D25D8989AB90B53B
+          9117F16599E417B0B9576DD01CC9E8389D8C83282A7066DAF5DA5C45B986A1C6
+          0167C99BDB869ED44FC1254D42525F6947556E076B844A051788C93820A67E54
+          FC936585D67484B764597F2107244F91A529BCDAAEDA0697645D7F214596A260
+          9E63539F9269DD129E4B1E0C7C5D640C9FE7177253CF53EDD5364B9CF0269131
+          85557BD930B41A61191B864AE2F3C95A15CCCFB2DE421B866ED749B6335557E0
+          CA0465E2778E27CEB2DEB8EE086F29A4EB244FE7A2A91B67F734C27DB668C2F7
+          5B75CD778B9638525CE7A2CDFD4EF87D2FADF55EE174BF13DE2BF28633245837
+          B8283C42F41935094717C9A1DADE112EE16399D63D22A6D6C6836339BF495616
+          791B47B87F16E2089789D3555863793B0F727051233C5E117E3DA12EAD243C99
+          557D2D04392C11FD1E06D4E466D68F16EDEE7691111C1C61ED679E2E9344B165
+          0B94235C93F6E6AE08EFB1CA71093F67A14C3402BD3F2E45A01CA3089EB1CE1E
+          828B53AE6BB1B52EF61264608BD81CA90D71B948942CD87A7D9A16AC967097F5
+          E5107E2F7A7809A9B0C1D60CDFDB70CCA2AE82E626624667EF69777FC30DA287
+          F72539BA5214957A609BE3C24E8A8164D5F1C14335E10713CAFF95638153DFAF
+          249EEEBCB013E101A2C8382FB7704CEED84C4CB33EB372689827421697488D9C
+          15B20874AC8E8744E92F7DF2F584D1D97B8A525CFA848F4A7FE993E15333E759
+          37C1F2D25F8B26384B9409DEC4FB367180840745D9E04B969C6FCA3928123E4A
+          7B4FE976CF7089A9469B6529536B6C7371107CEA9E6DD9C44DB54B9C94B9490A
+          A938F94CD9139A714AA3163ABA95B53393C326595742E29483CDD2336D3463C1
+          3E6252253023BE7A1C5E9A75C4CAB64B9C155CE0D608FF1B0CB67B443F11AF14
+          822F9A755ED73F7CDB756116AE742E93CBB6390A1336F0CFFB66656C0FCB5FD7
+          0D599D6048F281105F23EBC602E767F9A48FCB6A2F4329C85E1D7CE5066B289C
+          B4A5ED34B1127F68DC5CBA998319F8FA41D220F177FC5B1CAA538F0E19B19D81
+          37B1331ECAF2B0AB7070D61E5BBA0ADDDECBDBDC4827BBB159429A1645D4FAD2
+          197D69C1873A854B352E8B9FCB2B73E2BC57125EEC3AC14CE7C9F85F28BCD736
+          0FCCF8F01C4EE49286E86951D42DE234B679F7BB14A24CD7F38A2CE50C09E9AD
+          06F893A34334E1E5853B032F0B667C781A1F6CF1A57CF6C0B6A308C459ABEBCF
+          DC1727F02F4ADC54BF614607768FAD7F0AE6B1AB7FDB7F0A16BBFD8379FC5B69
+          CE2A3C1E8FC7E3F1783C1E8FC7E3F1783C1E8FC7E3F1888CF90757FC1FB693AE
+          C2CB0000000049454E44AE426082
+        }
+        Proportional = True
+        ShowHint = True
+      end
+      object Shape14: TShape
+        Left = 93
+        Height = 21
+        Top = 154
+        Width = 23
+        Anchors = []
+        Brush.Color = 1052172
+        Shape = stRoundRect
+      end
+      object Image7: TImage
+        Cursor = crHandPoint
+        Left = 95
+        Height = 20
+        Hint = 'This is the encrypted text: it’s formatted in Base64 to make export easier.'#13#10'This ensures critical-level encryption, providing maximum security for the content.'#13#10'It was encrypted using the Rijndael algorithm, without CBC mode, with a 256-bit key.'#13#10'Base64 encoding makes it easy to export the text without compromising integrity.'
+        Top = 155
+        Width = 20
+        ParentShowHint = False
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B47726170686963B208000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000086449444154789CED9D698C
+          144514804BF0082AC608BBFD5EEF225189F1C63BFE308AB7C63B7821EA0F138D
+          77F49FC71F4DBC6F7FE2F1C344836EE21F0F5041D79D57BDA0E20F081AAF6840
+          018F6814BC66AAB0CCEB1971255D3557F774F76C7DC9246466BB8EAEAA57EFBD
+          7AF510C2E3F1783C1E8FC7E3F1783C1E8FC7E3F1783C1E8F4708B372AF3DAA34
+          345745C1C98AC27375145EC61FFE377FC7BFF1DFE4DDCEBEC4BC15ECA6223C43
+          49785013BEAB08366889A6954FFCB784EFF0B34AE2E95C56DEFD292566746077
+          4D709596B04C11D65A1D801606A8AA25BCAD2B70A51F9C163095707F25E15925
+          714B5A83601D1C895BB82EAE33EF7E178E6A141CA2085E52845BB31E888481D1
+          8A6071958283C56427DE1F08EFAE8B92DE0E44C2C02845F0D4A45506628DA88D
+          0D5A5BF705FC85CBA97FF09714F6996F552538474C16CCDA837656848F2BC2BF
+          DB7CF1DFB168D114DCA82AE129662C9C65AD632C9CC57FA3096FE267F8D936EB
+          FA5B497CD4AC123B897EC68C0E8096B8B20D31B2915F4C5586877755AF113B54
+          A3F00845F89892B8A98DC15961560C06A21F3172603F45F8656B2F0256B3A167
+          46C4D4D4DB3122A6EA0A2ED0846B5A14615F181ADC57F413D5CAD061ADCC4C25
+          619D92309F6774D66DE23A34C1C54AC2FA1656EA26EE83E8A395E194E1ACEE2A
+          898FE461ACB111CA62B199CACD8352FA95622A30A0247CD6A4A33FB06B24EFB6
+          2A199CC47B569389F325EF83A2ACDA54D30D9CF0C32275D08CCD442D7195BBCD
+          305E4AED8B55DB2683F16E118D3053F7A3BDD964A53C2CCA67F4B9EC0C586696
+          CCD9451414B364CE2E9A60B9D34E8982B345193072C674B6769D624ACE982E0A
+          8E9133A6BBC49722F8865793283A4AC2134E4D25A53DC38C88A966051CA8082F
+          D412AFD184B7B2CB9E67AE21DC3B953AC666A24B4364CD5014DE6B2B515955DB
+          4A784A37E51B23A62889E7373CC39B9B686F5FC5EE8F2E0747119E665389F9AC
+          862785282A4AE2CB596D844A0627C5167C0BD6F5F62F4D4978A01BCD885D2EF6
+          81871745710F97505B1ABDAE1BA34F4BB8CB5676CB1F82A8D3BD2B361E09BEB1
+          AC446DC687E788A2C1A76FD65914C1459D96AB25DEDCD540FC5FA17887C55E67
+          ED082F756CF04F8B22D1703F588E5D6175A7BE29333A008AE00FB748826F35E1
+          1B5AC2AB4AC2E7CD0706AEEBA82D464CD112D75AC4E266B30A771545A11E9060
+          7901517859E7E5E21D8E4D7BA392E179DB3F53A3C1E3D89A76C8FC759D4E102D
+          71A163B0178AA2C0869EEDA59951B163A7E52A82172C33F23B97DC6E1C0D7F62
+          7B79B5088EE9A43DDC17871ABC5414817AE793CFC459EDECA66C2571514299BF
+          55C7F0C866CF6A09D73BC4D61569DB594AC25F667C789AC81BF6D4DA3ADEED49
+          5F95828395849F2774FA47B60B5A79B65681131D9BFBB59DB6A94678947D3F0B
+          4F157913471426AF8E4D691C3419C2BDF91C5D5378B58982C136DA35DFFAE22A
+          7841C7ED3162073E32B0AC92FB45DEB0D7D6A2FD2CCEB55D125FB30D88191F1E
+          CAC40026589E5E0F3A6D9C2D9487821BF36A9376D92E84635995CFC6A3C8133E
+          CFB08B85EEFC561DFBBA08EFB5B9FEF9FB5A0427882EE17DCC567EAE1E600EAD
+          B18A859543C3BD6C8B8960B696F89E5DB38AB5ABDB52A98BF7359B2243437345
+          5ED41D7E8933656B2F2247FE25F6004FD0C692DAA325DE29D25D8989AB90B53B
+          9117F16599E417B0B9576DD01CC9E8389D8C83282A7066DAF5DA5C45B986A1C6
+          0167C99BDB869ED44FC1254D42525F6947556E076B844A051788C93820A67E54
+          FC936585D67484B764597F2107244F91A529BCDAAEDA0697645D7F214596A260
+          9E63539F9269DD129E4B1E0C7C5D640C9FE7177253CF53EDD5364B9CF0269131
+          85557BD930B41A61191B864AE2F3C95A15CCCFB2DE421B866ED749B6335557E0
+          CA0465E2778E27CEB2DEB8EE086F29A4EB244FE7A2A91B67F734C27DB668C2F7
+          5B75CD778B9638525CE7A2CDFD4EF87D2FADF55EE174BF13DE2BF28633245837
+          B8283C42F41935094717C9A1DADE112EE16399D63D22A6D6C6836339BF495616
+          791B47B87F16E2089789D3555863793B0F727051233C5E117E3DA12EAD243C99
+          557D2D04392C11FD1E06D4E466D68F16EDEE7691111C1C61ED679E2E9344B165
+          0B94235C93F6E6AE08EFB1CA71093F67A14C3402BD3F2E45A01CA3089EB1CE1E
+          828B53AE6BB1B52EF61264608BD81CA90D71B948942CD87A7D9A16AC967097F5
+          E5107E2F7A7809A9B0C1D60CDFDB70CCA2AE82E626624667EF69777FC30DA287
+          F72539BA5214957A609BE3C24E8A8164D5F1C14335E10713CAFF95638153DFAF
+          249EEEBCB013E101A2C8382FB7704CEED84C4CB33EB372689827421697488D9C
+          15B20874AC8E8744E92F7DF2F584D1D97B8A525CFA848F4A7FE993E15333E759
+          37C1F2D25F8B26384B9409DEC4FB367180840745D9E04B969C6FCA3928123E4A
+          7B4FE976CF7089A9469B6529536B6C7371107CEA9E6DD9C44DB54B9C94B9490A
+          A938F94CD9139A714AA3163ABA95B53393C326595742E29483CDD2336D3463C1
+          3E6252253023BE7A1C5E9A75C4CAB64B9C155CE0D608FF1B0CB67B443F11AF14
+          822F9A755ED73F7CDB756116AE742E93CBB6390A1336F0CFFB66656C0FCB5FD7
+          0D599D6048F281105F23EBC602E767F9A48FCB6A2F4329C85E1D7CE5066B289C
+          B4A5ED34B1127F68DC5CBA998319F8FA41D220F177FC5B1CAA538F0E19B19D81
+          37B1331ECAF2B0AB7070D61E5BBA0ADDDECBDBDC4827BBB159429A1645D4FAD2
+          197D69C1873A854B352E8B9FCB2B73E2BC57125EEC3AC14CE7C9F85F28BCD736
+          0FCCF8F01C4EE49286E86951D42DE234B679F7BB14A24CD7F38A2CE50C09E9AD
+          06F893A34334E1E5853B032F0B667C781A1F6CF1A57CF6C0B6A308C459ABEBCF
+          DC1727F02F4ADC54BF614607768FAD7F0AE6B1AB7FDB7F0A16BBFD8379FC5B69
+          CE2A3C1E8FC7E3F1783C1E8FC7E3F1783C1E8FC7E3F1888CF90757FC1FB693AE
+          C2CB0000000049454E44AE426082
+        }
+        Proportional = True
+        ShowHint = True
+      end
     end
     object Pnl_MemCipher1: TPanel
-      Left = 32
-      Height = 93
-      Top = 521
-      Width = 412
+      Left = 29
+      Height = 84
+      Top = 472
+      Width = 373
       BevelOuter = bvNone
-      ClientHeight = 93
-      ClientWidth = 412
+      ClientHeight = 84
+      ClientWidth = 373
       ParentBackground = False
       TabOrder = 2
       object Pnl_LoadingCipher: TPanel
         Left = 0
-        Height = 19
-        Top = 74
-        Width = 412
+        Height = 17
+        Top = 67
+        Width = 373
         Align = alBottom
         BevelOuter = bvNone
-        ClientHeight = 19
-        ClientWidth = 412
+        ClientHeight = 17
+        ClientWidth = 373
         Color = 3352866
         ParentBackground = False
         ParentColor = False
@@ -334,7 +527,7 @@ object Frm_CipherText: TFrm_CipherText
         OnClick = Pnl_LoadingCipherClick
         object Shp_Bar: TShape
           Left = 0
-          Height = 19
+          Height = 17
           Top = 0
           Width = 0
           Align = alLeft
@@ -342,162 +535,128 @@ object Frm_CipherText: TFrm_CipherText
           Shape = stRoundRect
         end
       end
-      object Panel2: TPanel
+      object Pnl_BtnEncryption: TPanel
         Left = 2
-        Height = 55
+        Height = 50
         Top = 0
-        Width = 199
-        ClientHeight = 55
-        ClientWidth = 199
+        Width = 180
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 180
         ParentBackground = False
         TabOrder = 1
-        object Shape3: TShape
-          Left = 1
-          Height = 53
-          Top = 1
-          Width = 197
+        object Shp_BtnEncryption: TShape
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 180
           Align = alClient
           Brush.Color = 16155195
           Pen.Style = psClear
           Shape = stRoundRect
         end
-        object SpeedButton1: TSpeedButton
+        object Btn_Encryption: TSpeedButton
           Cursor = crHandPoint
-          Left = 1
-          Height = 53
-          Top = 1
-          Width = 197
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 180
           Align = alClient
           Caption = 'Encryption'
           DragCursor = crHandPoint
           Flat = True
           Font.CharSet = ANSI_CHARSET
           Font.Color = clMenu
-          Font.Height = -22
+          Font.Height = -20
           Font.Name = 'Gadugi'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
-          OnClick = SpeedButton1Click
+          OnClick = Btn_EncryptionClick
           ParentFont = False
         end
       end
-      object Panel5: TPanel
-        Left = 213
-        Height = 55
+      object Pnl_BtnDecryption: TPanel
+        Left = 193
+        Height = 50
         Top = 1
-        Width = 199
-        ClientHeight = 55
-        ClientWidth = 199
+        Width = 180
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 180
         ParentBackground = False
         TabOrder = 2
-        object Shape9: TShape
-          Left = 1
-          Height = 53
-          Top = 1
-          Width = 197
+        object Shp_BtnDecryption: TShape
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 180
           Align = alClient
           Brush.Color = 16155195
           Pen.Style = psClear
           Shape = stRoundRect
         end
-        object SpeedButton2: TSpeedButton
+        object Btn_Decryption: TSpeedButton
           Cursor = crHandPoint
-          Left = 1
-          Height = 53
-          Top = 1
-          Width = 197
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 180
           Align = alClient
           Caption = 'Decryption'
           DragCursor = crHandPoint
           Flat = True
           Font.CharSet = ANSI_CHARSET
           Font.Color = clMenu
-          Font.Height = -22
+          Font.Height = -20
           Font.Name = 'Gadugi'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
-          OnClick = SpeedButton1Click
+          OnClick = Btn_EncryptionClick
           ParentFont = False
         end
       end
     end
     object Pnl_MemCipher2: TPanel
-      Left = 456
-      Height = 398
-      Top = 177
-      Width = 151
+      Left = 413
+      Height = 360
+      Top = 160
+      Width = 137
       BevelOuter = bvNone
-      ClientHeight = 398
-      ClientWidth = 151
+      ClientHeight = 360
+      ClientWidth = 137
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 3
-      object Pnl_Hash: TPanel
-        Left = 0
-        Height = 47
-        Top = 32
-        Width = 148
-        BevelOuter = bvNone
-        ClientHeight = 47
-        ClientWidth = 148
-        ParentBackground = False
-        TabOrder = 0
-        OnClick = Panel3Click
-        object Shape6: TShape
-          Left = 16
-          Height = 32
-          Top = 6
-          Width = 134
-          Anchors = []
-          Brush.Color = 1052172
-          Shape = stRoundRect
-        end
-        object Edt_SecretWord: TEdit
-          Left = 18
-          Height = 16
-          Top = 12
-          Width = 115
-          BorderStyle = bsNone
-          Color = 1052172
-          Font.CharSet = ANSI_CHARSET
-          Font.Color = clWindow
-          Font.Name = 'Century Gothic'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          TabOrder = 0
-          Text = 'Enter your word'
-          OnChange = Edt_passChange
-          OnClick = Edt_SecretWordClick
-        end
-      end
+      OnClick = Pnl_MemCipher2Click
       object Label8: TLabel
-        Left = 9
-        Height = 21
-        Top = 8
-        Width = 100
+        Left = 8
+        Height = 40
+        Top = -1
+        Width = 55
+        AutoSize = False
         Caption = 'Secret Word'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
+        WordWrap = True
         OnClick = Label8Click
       end
       object Label9: TLabel
-        Left = 18
-        Height = 71
+        Left = 16
+        Height = 64
         Top = 80
-        Width = 123
+        Width = 111
         AutoSize = False
         Caption = 'For security reasons, please provide us with a secret word or text (FOR SALT).'
         Font.CharSet = ANSI_CHARSET
         Font.Color = 4737279
-        Font.Height = -12
+        Font.Height = -11
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -507,23 +666,23 @@ object Frm_CipherText: TFrm_CipherText
         OnClick = Label8Click
       end
       object Shape10: TShape
-        Left = 15
-        Height = 32
-        Top = 210
-        Width = 131
+        Left = 8
+        Height = 29
+        Top = 192
+        Width = 120
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
       object Label12: TLabel
-        Left = 9
+        Left = 8
         Height = 21
-        Top = 179
-        Width = 44
+        Top = 161
+        Width = 36
         Caption = 'SALT'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -532,15 +691,15 @@ object Frm_CipherText: TFrm_CipherText
         OnClick = Label8Click
       end
       object Label13: TLabel
-        Left = 18
-        Height = 71
-        Top = 247
-        Width = 123
+        Left = 16
+        Height = 64
+        Top = 232
+        Width = 111
         AutoSize = False
         Caption = 'Please note that Salt is important for decrypting the data.'
         Font.CharSet = ANSI_CHARSET
         Font.Color = 4737279
-        Font.Height = -12
+        Font.Height = -11
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -550,10 +709,10 @@ object Frm_CipherText: TFrm_CipherText
         OnClick = Label8Click
       end
       object Edt_Salt: TEdit
-        Left = 18
-        Height = 16
-        Top = 214
-        Width = 115
+        Left = 16
+        Height = 17
+        Top = 197
+        Width = 104
         BorderStyle = bsNone
         Color = 1052172
         Font.CharSet = ANSI_CHARSET
@@ -561,75 +720,375 @@ object Frm_CipherText: TFrm_CipherText
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        OnChange = Edt_passChange
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Shape11: TShape
+        Left = 50
+        Height = 21
+        Top = 162
+        Width = 23
+        Anchors = []
+        Brush.Color = 1052172
+        Shape = stRoundRect
+      end
+      object Image4: TImage
+        Cursor = crHandPoint
+        Left = 51
+        Height = 20
+        Hint = 'The only data you need to save is the password, the encrypted text, and the Salt (which can be public).'#13#10'The Salt does not need to be kept secret; it can be shared publicly without compromising security.'#13#10'The Salt is generated using an RHC (Random Hash Cascade) and derived from your secret word.'#13#10'This is a Salt: an essential property for encryption and decryption.'#13#10'You don''t need to store your secret word (we recommend deleting it).'#13#10'You need it along with your password to decrypt the data.'
+        Top = 163
+        Width = 20
+        ParentShowHint = False
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B47726170686963B208000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000086449444154789CED9D698C
+          144514804BF0082AC608BBFD5EEF225189F1C63BFE308AB7C63B7821EA0F138D
+          77F49FC71F4DBC6F7FE2F1C344836EE21F0F5041D79D57BDA0E20F081AAF6840
+          018F6814BC66AAB0CCEB1971255D3557F774F76C7DC9246466BB8EAEAA57EFBD
+          7AF510C2E3F1783C1E8FC7E3F1783C1E8FC7E3F1783C1E8F4708B372AF3DAA34
+          345745C1C98AC27375145EC61FFE377FC7BFF1DFE4DDCEBEC4BC15ECA6223C43
+          49785013BEAB08366889A6954FFCB784EFF0B34AE2E95C56DEFD292566746077
+          4D709596B04C11D65A1D801606A8AA25BCAD2B70A51F9C163095707F25E15925
+          714B5A83601D1C895BB82EAE33EF7E178E6A141CA2085E52845BB31E888481D1
+          8A6071958283C56427DE1F08EFAE8B92DE0E44C2C02845F0D4A45506628DA88D
+          0D5A5BF705FC85CBA97FF09714F6996F552538474C16CCDA837656848F2BC2BF
+          DB7CF1DFB168D114DCA82AE129662C9C65AD632C9CC57FA3096FE267F8D936EB
+          FA5B497CD4AC123B897EC68C0E8096B8B20D31B2915F4C5586877755AF113B54
+          A3F00845F89892B8A98DC15961560C06A21F3172603F45F8656B2F0256B3A167
+          46C4D4D4DB3122A6EA0A2ED0846B5A14615F181ADC57F413D5CAD061ADCC4C25
+          619D92309F6774D66DE23A34C1C54AC2FA1656EA26EE83E8A395E194E1ACEE2A
+          898FE461ACB111CA62B199CACD8352FA95622A30A0247CD6A4A33FB06B24EFB6
+          2A199CC47B569389F325EF83A2ACDA54D30D9CF0C32275D08CCD442D7195BBCD
+          305E4AED8B55DB2683F16E118D3053F7A3BDD964A53C2CCA67F4B9EC0C586696
+          CCD9451414B364CE2E9A60B9D34E8982B345193072C674B6769D624ACE982E0A
+          8E9133A6BBC49722F8865793283A4AC2134E4D25A53DC38C88A966051CA8082F
+          D412AFD184B7B2CB9E67AE21DC3B953AC666A24B4364CD5014DE6B2B515955DB
+          4A784A37E51B23A62889E7373CC39B9B686F5FC5EE8F2E0747119E665389F9AC
+          862785282A4AE2CB596D844A0627C5167C0BD6F5F62F4D4978A01BCD885D2EF6
+          81871745710F97505B1ABDAE1BA34F4BB8CB5676CB1F82A8D3BD2B361E09BEB1
+          AC446DC687E788A2C1A76FD65914C1459D96AB25DEDCD540FC5FA17887C55E67
+          ED082F756CF04F8B22D1703F588E5D6175A7BE29333A008AE00FB748826F35E1
+          1B5AC2AB4AC2E7CD0706AEEBA82D464CD112D75AC4E266B30A771545A11E9060
+          7901517859E7E5E21D8E4D7BA392E179DB3F53A3C1E3D89A76C8FC759D4E102D
+          71A163B0178AA2C0869EEDA59951B163A7E52A82172C33F23B97DC6E1C0D7F62
+          7B79B5088EE9A43DDC17871ABC5414817AE793CFC459EDECA66C2571514299BF
+          55C7F0C866CF6A09D73BC4D61569DB594AC25F667C789AC81BF6D4DA3ADEED49
+          5F95828395849F2774FA47B60B5A79B65681131D9BFBB59DB6A94678947D3F0B
+          4F157913471426AF8E4D691C3419C2BDF91C5D5378B58982C136DA35DFFAE22A
+          7841C7ED3162073E32B0AC92FB45DEB0D7D6A2FD2CCEB55D125FB30D88191F1E
+          CAC40026589E5E0F3A6D9C2D9487821BF36A9376D92E84635995CFC6A3C8133E
+          CFB08B85EEFC561DFBBA08EFB5B9FEF9FB5A0427882EE17DCC567EAE1E600EAD
+          B18A859543C3BD6C8B8960B696F89E5DB38AB5ABDB52A98BF7359B2243437345
+          5ED41D7E8933656B2F2247FE25F6004FD0C692DAA325DE29D25D8989AB90B53B
+          9117F16599E417B0B9576DD01CC9E8389D8C83282A7066DAF5DA5C45B986A1C6
+          0167C99BDB869ED44FC1254D42525F6947556E076B844A051788C93820A67E54
+          FC936585D67484B764597F2107244F91A529BCDAAEDA0697645D7F214596A260
+          9E63539F9269DD129E4B1E0C7C5D640C9FE7177253CF53EDD5364B9CF0269131
+          85557BD930B41A61191B864AE2F3C95A15CCCFB2DE421B866ED749B6335557E0
+          CA0465E2778E27CEB2DEB8EE086F29A4EB244FE7A2A91B67F734C27DB668C2F7
+          5B75CD778B9638525CE7A2CDFD4EF87D2FADF55EE174BF13DE2BF28633245837
+          B8283C42F41935094717C9A1DADE112EE16399D63D22A6D6C6836339BF495616
+          791B47B87F16E2089789D3555863793B0F727051233C5E117E3DA12EAD243C99
+          557D2D04392C11FD1E06D4E466D68F16EDEE7691111C1C61ED679E2E9344B165
+          0B94235C93F6E6AE08EFB1CA71093F67A14C3402BD3F2E45A01CA3089EB1CE1E
+          828B53AE6BB1B52EF61264608BD81CA90D71B948942CD87A7D9A16AC967097F5
+          E5107E2F7A7809A9B0C1D60CDFDB70CCA2AE82E626624667EF69777FC30DA287
+          F72539BA5214957A609BE3C24E8A8164D5F1C14335E10713CAFF95638153DFAF
+          249EEEBCB013E101A2C8382FB7704CEED84C4CB33EB372689827421697488D9C
+          15B20874AC8E8744E92F7DF2F584D1D97B8A525CFA848F4A7FE993E15333E759
+          37C1F2D25F8B26384B9409DEC4FB367180840745D9E04B969C6FCA3928123E4A
+          7B4FE976CF7089A9469B6529536B6C7371107CEA9E6DD9C44DB54B9C94B9490A
+          A938F94CD9139A714AA3163ABA95B53393C326595742E29483CDD2336D3463C1
+          3E6252253023BE7A1C5E9A75C4CAB64B9C155CE0D608FF1B0CB67B443F11AF14
+          822F9A755ED73F7CDB756116AE742E93CBB6390A1336F0CFFB66656C0FCB5FD7
+          0D599D6048F281105F23EBC602E767F9A48FCB6A2F4329C85E1D7CE5066B289C
+          B4A5ED34B1127F68DC5CBA998319F8FA41D220F177FC5B1CAA538F0E19B19D81
+          37B1331ECAF2B0AB7070D61E5BBA0ADDDECBDBDC4827BBB159429A1645D4FAD2
+          197D69C1873A854B352E8B9FCB2B73E2BC57125EEC3AC14CE7C9F85F28BCD736
+          0FCCF8F01C4EE49286E86951D42DE234B679F7BB14A24CD7F38A2CE50C09E9AD
+          06F893A34334E1E5853B032F0B667C781A1F6CF1A57CF6C0B6A308C459ABEBCF
+          DC1727F02F4ADC54BF614607768FAD7F0AE6B1AB7FDB7F0A16BBFD8379FC5B69
+          CE2A3C1E8FC7E3F1783C1E8FC7E3F1783C1E8FC7E3F1888CF90757FC1FB693AE
+          C2CB0000000049454E44AE426082
+        }
+        Proportional = True
+        ShowHint = True
+      end
+      object Shape12: TShape
+        Left = 65
+        Height = 21
+        Top = 15
+        Width = 23
+        Anchors = []
+        Brush.Color = 1052172
+        Shape = stRoundRect
+      end
+      object Image5: TImage
+        Cursor = crHandPoint
+        Left = 66
+        Height = 20
+        Hint = 'This is your secret word: it’s used to generate the Salt.'#13#10'After use, delete the secret word — there’s no need to keep it.'#13#10'Deleting it ensures greater security since it won’t be stored or shared.'#13#10'The Salt is derived from it, but once generated, the secret word is no longer needed.'#13#10'This is your secret word: it’s used to generate the Salt.'
+        Top = 16
+        Width = 20
+        ParentShowHint = False
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B47726170686963B208000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000086449444154789CED9D698C
+          144514804BF0082AC608BBFD5EEF225189F1C63BFE308AB7C63B7821EA0F138D
+          77F49FC71F4DBC6F7FE2F1C344836EE21F0F5041D79D57BDA0E20F081AAF6840
+          018F6814BC66AAB0CCEB1971255D3557F774F76C7DC9246466BB8EAEAA57EFBD
+          7AF510C2E3F1783C1E8FC7E3F1783C1E8FC7E3F1783C1E8F4708B372AF3DAA34
+          345745C1C98AC27375145EC61FFE377FC7BFF1DFE4DDCEBEC4BC15ECA6223C43
+          49785013BEAB08366889A6954FFCB784EFF0B34AE2E95C56DEFD292566746077
+          4D709596B04C11D65A1D801606A8AA25BCAD2B70A51F9C163095707F25E15925
+          714B5A83601D1C895BB82EAE33EF7E178E6A141CA2085E52845BB31E888481D1
+          8A6071958283C56427DE1F08EFAE8B92DE0E44C2C02845F0D4A45506628DA88D
+          0D5A5BF705FC85CBA97FF09714F6996F552538474C16CCDA837656848F2BC2BF
+          DB7CF1DFB168D114DCA82AE129662C9C65AD632C9CC57FA3096FE267F8D936EB
+          FA5B497CD4AC123B897EC68C0E8096B8B20D31B2915F4C5586877755AF113B54
+          A3F00845F89892B8A98DC15961560C06A21F3172603F45F8656B2F0256B3A167
+          46C4D4D4DB3122A6EA0A2ED0846B5A14615F181ADC57F413D5CAD061ADCC4C25
+          619D92309F6774D66DE23A34C1C54AC2FA1656EA26EE83E8A395E194E1ACEE2A
+          898FE461ACB111CA62B199CACD8352FA95622A30A0247CD6A4A33FB06B24EFB6
+          2A199CC47B569389F325EF83A2ACDA54D30D9CF0C32275D08CCD442D7195BBCD
+          305E4AED8B55DB2683F16E118D3053F7A3BDD964A53C2CCA67F4B9EC0C586696
+          CCD9451414B364CE2E9A60B9D34E8982B345193072C674B6769D624ACE982E0A
+          8E9133A6BBC49722F8865793283A4AC2134E4D25A53DC38C88A966051CA8082F
+          D412AFD184B7B2CB9E67AE21DC3B953AC666A24B4364CD5014DE6B2B515955DB
+          4A784A37E51B23A62889E7373CC39B9B686F5FC5EE8F2E0747119E665389F9AC
+          862785282A4AE2CB596D844A0627C5167C0BD6F5F62F4D4978A01BCD885D2EF6
+          81871745710F97505B1ABDAE1BA34F4BB8CB5676CB1F82A8D3BD2B361E09BEB1
+          AC446DC687E788A2C1A76FD65914C1459D96AB25DEDCD540FC5FA17887C55E67
+          ED082F756CF04F8B22D1703F588E5D6175A7BE29333A008AE00FB748826F35E1
+          1B5AC2AB4AC2E7CD0706AEEBA82D464CD112D75AC4E266B30A771545A11E9060
+          7901517859E7E5E21D8E4D7BA392E179DB3F53A3C1E3D89A76C8FC759D4E102D
+          71A163B0178AA2C0869EEDA59951B163A7E52A82172C33F23B97DC6E1C0D7F62
+          7B79B5088EE9A43DDC17871ABC5414817AE793CFC459EDECA66C2571514299BF
+          55C7F0C866CF6A09D73BC4D61569DB594AC25F667C789AC81BF6D4DA3ADEED49
+          5F95828395849F2774FA47B60B5A79B65681131D9BFBB59DB6A94678947D3F0B
+          4F157913471426AF8E4D691C3419C2BDF91C5D5378B58982C136DA35DFFAE22A
+          7841C7ED3162073E32B0AC92FB45DEB0D7D6A2FD2CCEB55D125FB30D88191F1E
+          CAC40026589E5E0F3A6D9C2D9487821BF36A9376D92E84635995CFC6A3C8133E
+          CFB08B85EEFC561DFBBA08EFB5B9FEF9FB5A0427882EE17DCC567EAE1E600EAD
+          B18A859543C3BD6C8B8960B696F89E5DB38AB5ABDB52A98BF7359B2243437345
+          5ED41D7E8933656B2F2247FE25F6004FD0C692DAA325DE29D25D8989AB90B53B
+          9117F16599E417B0B9576DD01CC9E8389D8C83282A7066DAF5DA5C45B986A1C6
+          0167C99BDB869ED44FC1254D42525F6947556E076B844A051788C93820A67E54
+          FC936585D67484B764597F2107244F91A529BCDAAEDA0697645D7F214596A260
+          9E63539F9269DD129E4B1E0C7C5D640C9FE7177253CF53EDD5364B9CF0269131
+          85557BD930B41A61191B864AE2F3C95A15CCCFB2DE421B866ED749B6335557E0
+          CA0465E2778E27CEB2DEB8EE086F29A4EB244FE7A2A91B67F734C27DB668C2F7
+          5B75CD778B9638525CE7A2CDFD4EF87D2FADF55EE174BF13DE2BF28633245837
+          B8283C42F41935094717C9A1DADE112EE16399D63D22A6D6C6836339BF495616
+          791B47B87F16E2089789D3555863793B0F727051233C5E117E3DA12EAD243C99
+          557D2D04392C11FD1E06D4E466D68F16EDEE7691111C1C61ED679E2E9344B165
+          0B94235C93F6E6AE08EFB1CA71093F67A14C3402BD3F2E45A01CA3089EB1CE1E
+          828B53AE6BB1B52EF61264608BD81CA90D71B948942CD87A7D9A16AC967097F5
+          E5107E2F7A7809A9B0C1D60CDFDB70CCA2AE82E626624667EF69777FC30DA287
+          F72539BA5214957A609BE3C24E8A8164D5F1C14335E10713CAFF95638153DFAF
+          249EEEBCB013E101A2C8382FB7704CEED84C4CB33EB372689827421697488D9C
+          15B20874AC8E8744E92F7DF2F584D1D97B8A525CFA848F4A7FE993E15333E759
+          37C1F2D25F8B26384B9409DEC4FB367180840745D9E04B969C6FCA3928123E4A
+          7B4FE976CF7089A9469B6529536B6C7371107CEA9E6DD9C44DB54B9C94B9490A
+          A938F94CD9139A714AA3163ABA95B53393C326595742E29483CDD2336D3463C1
+          3E6252253023BE7A1C5E9A75C4CAB64B9C155CE0D608FF1B0CB67B443F11AF14
+          822F9A755ED73F7CDB756116AE742E93CBB6390A1336F0CFFB66656C0FCB5FD7
+          0D599D6048F281105F23EBC602E767F9A48FCB6A2F4329C85E1D7CE5066B289C
+          B4A5ED34B1127F68DC5CBA998319F8FA41D220F177FC5B1CAA538F0E19B19D81
+          37B1331ECAF2B0AB7070D61E5BBA0ADDDECBDBDC4827BBB159429A1645D4FAD2
+          197D69C1873A854B352E8B9FCB2B73E2BC57125EEC3AC14CE7C9F85F28BCD736
+          0FCCF8F01C4EE49286E86951D42DE234B679F7BB14A24CD7F38A2CE50C09E9AD
+          06F893A34334E1E5853B032F0B667C781A1F6CF1A57CF6C0B6A308C459ABEBCF
+          DC1727F02F4ADC54BF614607768FAD7F0AE6B1AB7FDB7F0A16BBFD8379FC5B69
+          CE2A3C1E8FC7E3F1783C1E8FC7E3F1783C1E8FC7E3F1888CF90757FC1FB693AE
+          C2CB0000000049454E44AE426082
+        }
+        Proportional = True
+        ShowHint = True
+      end
+      object Shape6: TShape
+        Left = 8
+        Height = 29
+        Top = 45
+        Width = 120
+        Anchors = []
+        Brush.Color = 1052172
+        Shape = stRoundRect
+      end
+      object Edt_SecretWord: TEdit
+        Left = 16
+        Height = 17
+        Top = 51
+        Width = 104
+        BorderStyle = bsNone
+        Color = 1052172
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWindow
+        Font.Name = 'Century Gothic'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnChange = Edt_passChange
+        OnClick = Edt_SecretWordClick
         ParentFont = False
         TabOrder = 1
-        OnChange = Edt_passChange
+        Text = 'Enter your word'
+      end
+      object Img_ClosEyes: TImage
+        Left = 24
+        Height = 26
+        Top = 304
+        Width = 26
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B477261706869636306000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000061549444154789CED9C5B88
+          955514C7BF34BBD1852E7681C808BA3E74A5EB5BF7522B33D38A20A4E8C1A27B
+          D4A4F5550F33E7DBFFFF3EE381E961027B88883A8151868C493D153D24D985D0
+          74B2A08C328A4ACD34EDC472F6C020739CB3BFB3F777BE99593F58309CB9FCD7
+          DE6BDFD7DE93248AA2288AA2288AA2288AA2288AA2288AA2288AA2288AA2288A
+          A2288AA21447A3D13860E9D2A527C4D6110DD18AAD332E49D3F44063CC75245F
+          22F932C9E3626B8A866801E823796DBD5E9F9A4C76489E01A087E466920D9295
+          225B6D9AA65300644E5B7CE8CEB2ECF4643221150E6016800F01FCE72A436C71
+          A77C02B064D80FE7D307D6DA99137A48EBEFEF9F066021C9AF470461D8BA3BED
+          1F867AEABE7E7D05E01E1952938982B4326BEDED24378C5260B1956518BFD334
+          9D42F2DDD17C04F01DC9FBCBE0675B1863AE01F079934088FD50ABD58E4C4A42
+          A552390AC08FFBF1772D80AB92F146A5523999E4ABFB29D85E33C6DC92940C92
+          B3C7F21BC08ADEDEDE5393B223632D802E007FB752A8A4A4907C6F2CFF496E07
+          F06469E71763CCF9003E6BA1207BCD5A7B495EAD344D0F22B900C0EB24D793DC
+          E66CBD7C0660BEFC4CDEBF0FE0D256CB01E05363CCB94959706BF9A700EC6AB5
+          102457E7D5B3D6DE06E0DB16340601CCCDAB23CB728FF2EC24F944C797C9008E
+          0730E0E1F8B0DDE9AB55AFD7A772082F2D009046E3AB67ADBD3B47B956D66AB5
+          E94927B0D65E396287ED5341FFE45959314730466866BE7A59961D4172470EBD
+          5F485E9F1485B454002F92DC93B38256E619A6983318236C8EAF6ECEDE2F0D60
+          37C917A2EF5BFAFAFA0E6FB679F270F6F91C13F86080806CF29DE85DC36BA7AC
+          03B2B7496220EB6E394A08503137FBE8925C104073AFC98981A7F69C7635017C
+          096046121263CCE56E6C0C513167F9686368691B2420005EF3D43E2790EECFD6
+          DACBBC2BBE8953F3734E6EA39A31E6444FFD6F4269CB3EC547BB5AAD9E14507B
+          87CC85493BB8A5DFBF019D6AD46AB5837D7C00B035600FD9EAA39DA6E92121CB
+          2E933D807BBD03E12A62511B2BA9A6966362DD1AB042FEF4D196C613BAFC926F
+          01F0A86F30BA423B326CDDDDDDC78E9721AB56AB4D8F550F249F6EC909920F47
+          74A29165D999936D5267737F1E1ACB8185FBA455633871538E45452390F6BCA2
+          97BD2D0C5F0B471537C6DCEA76988DC84E747562630860A3A4913D03B2B880FA
+          D82D753F9AF8F7B1C59D0303892700E6B6AB9B271926A7D245D4899C22742C20
+          92B7B0D61E9A232828F270314DD3C35A49B4450B886B85C197B94D6C41CE4B08
+          264F30F21CBF1B63EE2AA82EF634CDDB0078B0ACC3D6C88956E683163436B693
+          B307F07E01F52093FAA2B11C79BC0847ACB5E7E5ADACFEFEFE69725028CB5800
+          EB64F3E86C9DFB6C9EEF043E922CCB2E8CBDDA1433C63CD29243928E2CA0A72C
+          4F4A0ADB4C31B4688F793925372A62B712B9609D940C6BEDCCD8A3838C42B99C
+          73573F831E2EEE638365BB28477253C460EC92ABA96D392957F549FE1531286F
+          262501018F6946B16D72C93C94A31703D812B1E52C09E2681B486A3962F97E23
+          7945121239140C94DB6EE6F4A2A443907C2062CFD810EDCD89B5F61892AB223A
+          5F490A462EF9456C64033D3D3D47472DC0F085B5582B30006F1431D1BB09FCAD
+          882BA9ACD0E70BEE68FAF748AD6B30E665330037C65A4DB9F9C2EB664DC882CD
+          00F049C42EFFB65CE20EE52FC90B00BC13D1DF8F2B95CA2949099EAA3DE779D9
+          DAB7FB0F00B823CF29B1FC8E3B285C1571A3BB53568AA57A9A202D99E417B15A
+          1F876CBBABD82E3938ECEDED3D5B161A92C41293AFE533F91EC967DC01E1F6C8
+          3EAD6DE75C2E2A2EBBF76C81798446074D02BDB89D43CCD23D691BAF86F1F2A4
+          ADC9415D88FBC08D3298DCD3B5D6DE908C67245B37C6B3E8D21B26CAB3E891C8
+          582B850A7CF1AD11D9E4FDE27DE3629E68A7C7B8F7EB2B8AC8CA319F7D24BD7A
+          42F5885690D7AB24AB007E2A4110368B2FA57A51DB29A4254AAF21F90A805F8B
+          0A8268015846F2EA3C3753260DD56AF53437DFD449FE113008F2967DB53BE1BD
+          48839083344DA7B800CD7679FE65EE0DF91A79AF2E893379D9EB6C8B7BC3BEC6
+          FDFBA765EE7766C9DFD000288AA2288AA2288AA2288AA2288AA2288AA2288AA2
+          288AA2288AA224938EFF01A2732BFAFEB2C2F80000000049454E44AE426082
+        }
+        Proportional = True
+        Visible = False
+      end
+      object Img_OpenEyes: TImage
+        Left = 56
+        Height = 26
+        Top = 304
+        Width = 26
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B477261706869630F07000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C18000006C149444154789CED9C698C
+          544510801FBBE0158F78A062C874CF6605E18717F1FCE7858A07E0016A4C08D1
+          F0438DB751045DF4078228C9869DAA1910498C213A261AC59855A2FB43E0750D
+          13F00C082B9A78443118151451E1997A33C02A7B4CBF793DF366B7BEA493CD1E
+          53D55DD5DDD555DDEB7982200882200882200882200882200882200882200882
+          20088220088220D490201896F6979DE25A4C28230886B996D39874B50DD72633
+          511BC828034BC7147327B916C932589626EC48FB788597CF377B439D342D19A3
+          0D3EA309BFD3848132B8A0A65E1BB4352982852CBBA403CC6FF1F1746F481104
+          C35226738D26FC401BD8571E8C4011CEA9974A9A60EE7E3DCA3ABDAF7C9C34A8
+          97B409C5DC08E567666A82CF0F74FE4083F9F5D64F9766EA7FF452063FD50433
+          7849F506D5264D70B322D872A821D823F19D44ACDF415B9332F056AF3A127CA5
+          0DCC4A849ED5902EC0E58AE0A3DE3BC9CB147CD36ADA8FF512424B31779C26F8
+          B62F7DB5C18D2903977A8D46AB593A5A11BED467C70E7670B29730D204D70EA4
+          B732B84AF9A8BDC4D3D5365C199CAD09FFA8A4535E42D1846F0FEC4CF0BB36F0
+          4862F717451D676B831B06EC48B9A5D7E3F951658DFF2C7F982E64A76B8295CA
+          E0666D6017B7F06B82959A701AFF4ED4CFD77EEE824AFBA10CAC4FFB9933BDC4
+          10B4356982479581BF2AEF04AE8E2A2EE5C38DDAE097157870B72A646F882A27
+          0CCB2B37CA1E6DF0E1BA87C92D6BE16465B0B352C57B18E4566B61F97CB336F8
+          9CB52C8245EC34B6E2D285CCEDB6B238626CDDD03ED2AB07CA642ED97FC2B634
+          C69F51222B1DC1183D8CB2D056DED8352F1CA30976DBCBC21F35C1955ECDC8E7
+          9B95C1A7B5C1BD910688CF1D5196298A668C838E9099622B37CAEC2F35F84711
+          3CE5FCDC32BEABE3E8BE0F4F157BD03CEB0DDC4077B506D104DB6C37FAD0F1AA
+          7202ECE4B38DF54057A49C8FBA944AA872607CB8DE46AE0EA3A96A8D516A9C31
+          B0EAB3C94CA97A66127CA2D77628EB01EF5731CA5E545A1BAB1F1455CC9D6123
+          5B97C2D8580CA20DBC6C233B65707C2C7D26F84119B8D07AE07B1F109C166573
+          EB5BB98E536DE42B035FC426DBE0661BD9A9626E546CCE40B09BF742AF1A38F4
+          53847FC7A71406AD5BDA0FB7D14111EE8CCF1970A795ECAE1547C4D977DEEC53
+          06EFB03644A84C01EF8A1C49F5D3AC37568AD520BFDAC866E789BBFF5C6F5106
+          1FB03346291F15B868A7D192131B65C96ADDD03ED2D5382882C72A5242FB789F
+          2B25C25680B1436D53D77D36B8B75F05C28A5E8FB2AA8B962E64AFB30F2A301E
+          D9066FAA75D83B8083ECE331EF5D38E154DE74DC7A44B86CCCAEC7C150116EE5
+          32B2954108E7B81E8FD2A91EA7F626FC6BF7C24BA7579B4161386B5BBD37DA17
+          C3382B5D8B31E12C42DD0CC2758BD1EB9E3FD27A700816D532B938AA983BAA92
+          429B3B83B0173A08737B6D85ECF46877A8F0D948C688907E5704B7D5C641716F
+          9F759BB4C17B92BA6CF5DC68793F18D810B8B59A9ABD2278CFBD31601F9FF706
+          52E4A15A28A20D9E1575B0261473233851C861AC36B0890F8FE101D2C026FE1E
+          4753B61B784F52EB72E7BA8E364B8E09F757A41097236B6094D7BD84A2AA2C31
+          54640CCA3E68A514DFA870EE252633D14B18CAC749AE57075E85222A97991977
+          72F17FCA7527F0A2DC3667B322BC080233AA5292AFEA2B82DF1C2AF9AA971074
+          9C699A439D6F175F328F45D17421739E32B8DDDD5486B95E9D5184F31CF66F47
+          AA90B93856853929184F6DBB8F993250F8E7909481BB9DF58B608BB33727A3D7
+          2D3B4111BEEB4C79830BBC1AC397FC1CF6A733F5211CEFB607FB2FAC398AC094
+          81576AB1D1F306AE085E7318492DACE9F385726AFA67471DEA7679D94C15E06A
+          77D114ECB0BD59131B7CBD4513FAAEA6BC267C832F71C7A5AF2AC0398AF04D67
+          FA1A5CDB52CCA5BC7AC2290A6DF0499BCBD6D6D3DF60A7F2E196285962FE1B4E
+          14867B9FBB65764F182926E969027BB222FCD8E16C09F84D060F6C58F3373859
+          F999711C6870118B5B1874F89971E1CF0C3C1E2608F91D87539D7063357939A7
+          84D53D82276A5747C0FAB59273CCA9268999BC276D0DDA54C33C69EB255117CB
+          7D604A46E37BBA8AB257790D4DD0D6D4EFB3E8866830389E451F1A8DC1AC382F
+          BE69D733C2E0E634C19D0DB14F543563F8FDBAC155B5A8CAE928CDC09AF0E9C2
+          609A1195C0AF5735C1626DE0FBBA1B81C27F3EB338592F6AEB453EDFCCB34613
+          BEA80CFC54BB252994B53C45D9CBA2DC4C1932A40AD012EE37847965E0971897
+          227ECBBE9A33BC290313C4085108DA9AD840E1BFBCE03A3FE1F2F21BF222BF57
+          E7C219BFEC2DB7EDE537ECC5F2EF2CE7BFE14A1D7F8618401004411004411004
+          411004411004411004411004411004411004C11B72FC0B85D2CE6B463368B900
+          00000049454E44AE426082
+        }
+        Proportional = True
+        Visible = False
       end
     end
     object Pnl_MemCipher3: TPanel
-      Left = 32
-      Height = 80
-      Top = 97
-      Width = 266
+      Left = 21
+      Height = 72
+      Top = 88
+      Width = 247
       BevelOuter = bvNone
-      ClientHeight = 80
-      ClientWidth = 266
+      ClientHeight = 72
+      ClientWidth = 247
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 4
-      object Panel6: TPanel
-        Left = 18
-        Height = 46
-        Top = 26
-        Width = 239
-        BevelOuter = bvNone
-        Caption = 'Panel5'
-        ClientHeight = 46
-        ClientWidth = 239
-        ParentBackground = False
-        TabOrder = 0
-        OnClick = Panel3Click
-        object Shape7: TShape
-          Left = 0
-          Height = 40
-          Top = 0
-          Width = 221
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          Brush.Color = 1052172
-          OnChangeBounds = Shape7ChangeBounds
-          Shape = stRoundRect
-        end
-        object Edt_pass: TEdit
-          Left = 9
-          Height = 16
-          Top = 13
-          Width = 206
-          BorderStyle = bsNone
-          Color = 1052172
-          EchoMode = emPassword
-          Font.CharSet = ANSI_CHARSET
-          Font.Color = clWindow
-          Font.Name = 'Century Gothic'
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentFont = False
-          PasswordChar = '*'
-          TabOrder = 0
-          Text = 'PASS'
-          OnChange = Edt_passChange
-          OnClick = Edt_passClick
-        end
-      end
       object Label10: TLabel
-        Left = 9
+        Left = 8
         Height = 21
         Top = 0
-        Width = 79
+        Width = 72
         Caption = 'Password'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -637,46 +1096,143 @@ object Frm_CipherText: TFrm_CipherText
         ParentFont = False
         OnClick = Label8Click
       end
+      object Shape7: TShape
+        Left = 8
+        Height = 37
+        Top = 24
+        Width = 200
+        Anchors = []
+        Brush.Color = 1052172
+        OnChangeBounds = Shape7ChangeBounds
+        Shape = stRoundRect
+      end
+      object Img_PassEyes: TImage
+        Cursor = crHandPoint
+        Left = 183
+        Height = 20
+        Hint = 'PASSWORD SECURITY'
+        Top = 34
+        Width = 20
+        OnClick = Img_PassEyesClick
+        ParentShowHint = False
+        Picture.Data = {
+          1754506F727461626C654E6574776F726B477261706869636306000089504E47
+          0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
+          097048597300000B1300000B1301009A9C180000061549444154789CED9C5B88
+          955514C7BF34BBD1852E7681C808BA3E74A5EB5BF7522B33D38A20A4E8C1A27B
+          D4A4F5550F33E7DBFFFF3EE381E961027B88883A8151868C493D153D24D985D0
+          74B2A08C328A4ACD34EDC472F6C020739CB3BFB3F777BE99593F58309CB9FCD7
+          DE6BDFD7DE93248AA2288AA2288AA2288AA2288AA2288AA2288AA2288AA2288A
+          A2288AA21447A3D13860E9D2A527C4D6110DD18AAD332E49D3F44063CC75245F
+          22F932C9E3626B8A866801E823796DBD5E9F9A4C76489E01A087E466920D9295
+          225B6D9AA65300644E5B7CE8CEB2ECF4643221150E6016800F01FCE72A436C71
+          A77C02B064D80FE7D307D6DA99137A48EBEFEF9F066021C9AF470461D8BA3BED
+          1F867AEABE7E7D05E01E1952938982B4326BEDED24378C5260B1956518BFD334
+          9D42F2DDD17C04F01DC9FBCBE0675B1863AE01F079934088FD50ABD58E4C4A42
+          A552390AC08FFBF1772D80AB92F146A5523999E4ABFB29D85E33C6DC92940C92
+          B3C7F21BC08ADEDEDE5393B223632D802E007FB752A8A4A4907C6F2CFF496E07
+          F06469E71763CCF9003E6BA1207BCD5A7B495EAD344D0F22B900C0EB24D793DC
+          E66CBD7C0660BEFC4CDEBF0FE0D256CB01E05363CCB94959706BF9A700EC6AB5
+          102457E7D5B3D6DE06E0DB16340601CCCDAB23CB728FF2EC24F944C797C9008E
+          0730E0E1F8B0DDE9AB55AFD7A772082F2D009046E3AB67ADBD3B47B956D66AB5
+          E94927B0D65E396287ED5341FFE45959314730466866BE7A59961D4172470EBD
+          5F485E9F1485B454002F92DC93B38256E619A6983318236C8EAF6ECEDE2F0D60
+          37C917A2EF5BFAFAFA0E6FB679F270F6F91C13F86080806CF29DE85DC36BA7AC
+          03B2B7496220EB6E394A08503137FBE8925C104073AFC98981A7F69C7635017C
+          096046121263CCE56E6C0C513167F9686368691B2420005EF3D43E2790EECFD6
+          DACBBC2BBE8953F3734E6EA39A31E6444FFD6F4269CB3EC547BB5AAD9E14507B
+          87CC85493BB8A5DFBF019D6AD46AB5837D7C00B035600FD9EAA39DA6E92121CB
+          2E933D807BBD03E12A62511B2BA9A6966362DD1AB042FEF4D196C613BAFC926F
+          01F0A86F30BA423B326CDDDDDDC78E9721AB56AB4D8F550F249F6EC909920F47
+          74A29165D999936D5267737F1E1ACB8185FBA455633871538E45452390F6BCA2
+          97BD2D0C5F0B471537C6DCEA76988DC84E747562630860A3A4913D03B2B880FA
+          D82D753F9AF8F7B1C59D0303892700E6B6AB9B271926A7D245D4899C22742C20
+          92B7B0D61E9A232828F270314DD3C35A49B4450B886B85C197B94D6C41CE4B08
+          264F30F21CBF1B63EE2AA82EF634CDDB0078B0ACC3D6C88956E683163436B693
+          B307F07E01F52093FAA2B11C79BC0847ACB5E7E5ADACFEFEFE69725028CB5800
+          EB64F3E86C9DFB6C9EEF043E922CCB2E8CBDDA1433C63CD29243928E2CA0A72C
+          4F4A0ADB4C31B4688F793925372A62B712B9609D940C6BEDCCD8A3838C42B99C
+          73573F831E2EEE638365BB28477253C460EC92ABA96D392957F549FE1531286F
+          262501018F6946B16D72C93C94A31703D812B1E52C09E2681B486A3962F97E23
+          7945121239140C94DB6EE6F4A2A443907C2062CFD810EDCD89B5F61892AB223A
+          5F490A462EF9456C64033D3D3D47472DC0F085B5582B30006F1431D1BB09FCAD
+          882BA9ACD0E70BEE68FAF748AD6B30E665330037C65A4DB9F9C2EB664DC882CD
+          00F049C42EFFB65CE20EE52FC90B00BC13D1DF8F2B95CA2949099EAA3DE779D9
+          DAB7FB0F00B823CF29B1FC8E3B285C1571A3BB53568AA57A9A202D99E417B15A
+          1F876CBBABD82E3938ECEDED3D5B161A92C41293AFE533F91EC967DC01E1F6C8
+          3EAD6DE75C2E2A2EBBF76C81798446074D02BDB89D43CCD23D691BAF86F1F2A4
+          ADC9415D88FBC08D3298DCD3B5D6DE908C67245B37C6B3E8D21B26CAB3E891C8
+          582B850A7CF1AD11D9E4FDE27DE3629E68A7C7B8F7EB2B8AC8CA319F7D24BD7A
+          42F5885690D7AB24AB007E2A4110368B2FA57A51DB29A4254AAF21F90A805F8B
+          0A8268015846F2EA3C3753260DD56AF53437DFD449FE113008F2967DB53BE1BD
+          48839083344DA7B800CD7679FE65EE0DF91A79AF2E893379D9EB6C8B7BC3BEC6
+          FDFBA765EE7766C9DFD000288AA2288AA2288AA2288AA2288AA2288AA2288AA2
+          288AA2288AA224938EFF01A2732BFAFEB2C2F80000000049454E44AE426082
+        }
+        Proportional = True
+        ShowHint = True
+      end
+      object Edt_pass: TEdit
+        Left = 22
+        Height = 17
+        Top = 36
+        Width = 155
+        BorderStyle = bsNone
+        Color = 1052172
+        EchoMode = emPassword
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWindow
+        Font.Name = 'Century Gothic'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnChange = Edt_passChange
+        OnClick = Edt_passClick
+        ParentFont = False
+        PasswordChar = '*'
+        TabOrder = 0
+        Text = 'PASS'
+      end
     end
     object Pnl_MemCipher4: TPanel
-      Left = 292
-      Height = 80
-      Top = 97
-      Width = 266
+      Left = 240
+      Height = 72
+      Top = 88
+      Width = 241
       BevelOuter = bvNone
-      ClientHeight = 80
-      ClientWidth = 266
+      ClientHeight = 72
+      ClientWidth = 241
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 5
+      OnClick = Pnl_MemCipher4Click
       object Panel7: TPanel
-        Left = 18
-        Height = 46
-        Top = 26
-        Width = 239
+        Left = 16
+        Height = 42
+        Top = 24
+        Width = 216
         BevelOuter = bvNone
         Caption = 'Panel5'
-        ClientHeight = 46
-        ClientWidth = 239
+        ClientHeight = 42
+        ClientWidth = 216
         ParentBackground = False
         TabOrder = 0
         OnClick = Panel3Click
         object Shape8: TShape
-          Left = 0
-          Height = 40
+          Left = 2
+          Height = 37
           Top = 0
-          Width = 221
+          Width = 200
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
           OnChangeBounds = Shape7ChangeBounds
           Shape = stRoundRect
         end
         object Edt_Repass: TEdit
-          Left = 9
-          Height = 16
-          Top = 13
-          Width = 206
+          Left = 10
+          Height = 17
+          Top = 12
+          Width = 187
           BorderStyle = bsNone
           Color = 1052172
           EchoMode = emPassword
@@ -685,23 +1241,23 @@ object Frm_CipherText: TFrm_CipherText
           Font.Name = 'Century Gothic'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = Edt_passChange
+          OnClick = Edt_RepassClick
           ParentFont = False
           PasswordChar = '*'
           TabOrder = 0
           Text = 'PASS'
-          OnChange = Edt_passChange
-          OnClick = Edt_RepassClick
         end
       end
       object Label11: TLabel
-        Left = 9
+        Left = 16
         Height = 21
         Top = 0
-        Width = 110
+        Width = 96
         Caption = 'RE-Password'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -712,37 +1268,22 @@ object Frm_CipherText: TFrm_CipherText
     end
   end
   object Pnl_CipherText1: TPanel
-    Left = 184
-    Height = 56
-    Top = 24
-    Width = 88
+    Left = 167
+    Height = 51
+    Top = 22
+    Width = 80
     BevelOuter = bvNone
-    ClientHeight = 56
-    ClientWidth = 88
+    ClientHeight = 51
+    ClientWidth = 80
     Color = 1052172
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
-    object Label3: TLabel
-      Left = 39
-      Height = 16
-      Top = 20
-      Width = 31
-      Caption = 'Keys'
-      Font.CharSet = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -14
-      Font.Name = 'Century Gothic'
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
-      ParentColor = False
-      ParentFont = False
-    end
     object Image2: TImage
-      Left = 7
-      Height = 28
-      Top = 14
-      Width = 28
+      Left = 6
+      Height = 25
+      Top = 13
+      Width = 25
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963E609000089504E47
         0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -828,28 +1369,43 @@ object Frm_CipherText: TFrm_CipherText
       }
       Proportional = True
     end
+    object Label3: TLabel
+      Left = 35
+      Height = 17
+      Top = 18
+      Width = 27
+      Caption = 'Keys'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Century Gothic'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
   end
   object Pnl_CipherText2: TPanel
-    Left = 280
-    Height = 56
-    Top = 24
-    Width = 144
+    Left = 254
+    Height = 51
+    Top = 22
+    Width = 130
     BevelOuter = bvNone
-    ClientHeight = 56
-    ClientWidth = 144
+    ClientHeight = 51
+    ClientWidth = 130
     Color = 1052172
     ParentBackground = False
     ParentColor = False
     TabOrder = 2
     object Label4: TLabel
-      Left = 39
-      Height = 16
-      Top = 20
-      Width = 84
+      Left = 35
+      Height = 17
+      Top = 18
+      Width = 91
       Caption = 'About/GitHub'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
-      Font.Height = -14
+      Font.Height = -13
       Font.Name = 'Century Gothic'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -857,10 +1413,10 @@ object Frm_CipherText: TFrm_CipherText
       ParentFont = False
     end
     object Image3: TImage
-      Left = 7
-      Height = 28
-      Top = 14
-      Width = 28
+      Left = 6
+      Height = 25
+      Top = 13
+      Width = 25
       Picture.Data = {
         1754506F727461626C654E6574776F726B477261706869633303000089504E47
         0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -892,20 +1448,5 @@ object Frm_CipherText: TFrm_CipherText
       }
       Proportional = True
     end
-  end
-  object Label6: TLabel
-    Left = 9
-    Height = 26
-    Top = 15
-    Width = 153
-    Caption = 'Text Encryption'
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clWhite
-    Font.Height = -23
-    Font.Name = 'Century Gothic'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentColor = False
-    ParentFont = False
   end
 end

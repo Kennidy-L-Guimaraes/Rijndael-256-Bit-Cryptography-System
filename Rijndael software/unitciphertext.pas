@@ -13,34 +13,39 @@ type
   { TFrm_CipherText }
 
   TFrm_CipherText = class(TForm)
-    Edt_Salt: TEdit;
     Edt_pass: TEdit;
+    Edt_Salt: TEdit;
     Edt_Repass: TEdit;
     Edt_SecretWord: TEdit;
-    Image1: TImage;
+    Img_ClosEyes: TImage;
+    Img_OpenEyes: TImage;
+    Img_MenuTextEncrypt: TImage;
     Image2: TImage;
     Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Img_PassEyes: TImage;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
     Label13: TLabel;
-    Label2: TLabel;
     Label3: TLabel;
+    Lbl_MenuTextEncrypt: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
     Mem_Input: TMemo;
     Mem_Output: TMemo;
     Panel1: TPanel;
-    Panel2: TPanel;
+    Pnl_BtnEncryption: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
-    Panel5: TPanel;
-    Pnl_Hash: TPanel;
-    Panel6: TPanel;
+    Pnl_BtnDecryption: TPanel;
     Panel7: TPanel;
     Pnl_CipherText1: TPanel;
     Pnl_CipherText2: TPanel;
@@ -52,24 +57,31 @@ type
     Pnl_MemCipher2: TPanel;
     Pnl_MemCipher3: TPanel;
     Pnl_MemCipher4: TPanel;
+    Shape11: TShape;
+    Shape12: TShape;
+    Shape13: TShape;
+    Shape14: TShape;
+    Shape6: TShape;
+    Shape7: TShape;
     Shp_Bar: TShape;
     Shape10: TShape;
     Shape2: TShape;
-    Shape3: TShape;
+    Shp_BtnEncryption: TShape;
     Shape4: TShape;
     Shape5: TShape;
-    Shape6: TShape;
-    Shape7: TShape;
     Shape8: TShape;
-    Shape9: TShape;
-    SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
+    Shp_BtnDecryption: TShape;
+    Btn_Encryption: TSpeedButton;
+    Btn_Decryption: TSpeedButton;
     procedure Edt_SecretWordClick(Sender: TObject);
     procedure Edt_RepassClick(Sender: TObject);
     procedure Edt_passChange(Sender: TObject);
     procedure Edt_passClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Image4Click(Sender: TObject);
+    procedure Img_PassEyeClick(Sender: TObject);
+    procedure Img_PassEyesClick(Sender: TObject);
+    procedure Img_PassEyesDblClick(Sender: TObject);
     procedure Label8Click(Sender: TObject);
     procedure Mem_OutputClick(Sender: TObject);
     procedure Mem_InputChange(Sender: TObject);
@@ -80,8 +92,10 @@ type
     procedure Panel3Click(Sender: TObject);
     procedure Pnl_LoadingCipherClick(Sender: TObject);
     procedure Clear(Sender: TObject);
+    procedure Pnl_MemCipher2Click(Sender: TObject);
+    procedure Pnl_MemCipher4Click(Sender: TObject);
     procedure Shape7ChangeBounds(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure Btn_EncryptionClick(Sender: TObject);
     procedure EncriptText(password: string);
     procedure ProgressBar;
   private
@@ -100,6 +114,32 @@ implementation
 { TFrm_CipherText }
 
 procedure TFrm_CipherText.Image4Click(Sender: TObject);
+begin
+
+end;
+
+procedure TFrm_CipherText.Img_PassEyeClick(Sender: TObject);
+begin
+
+end;
+
+procedure TFrm_CipherText.Img_PassEyesClick(Sender: TObject);
+begin
+  if Img_PassEyes.Tag = 0 then
+  begin
+    Img_PassEyes.Picture.Assign(Img_OpenEyes.Picture);
+    Edt_Pass.PasswordChar := #0;
+    Img_PassEyes.Tag := 1;
+  end
+  else
+  begin
+    Img_PassEyes.Picture.Assign(Img_ClosEyes.Picture);
+    Edt_Pass.PasswordChar := '*';
+    Img_PassEyes.Tag := 0;
+  end;
+end;
+
+procedure TFrm_CipherText.Img_PassEyesDblClick(Sender: TObject);
 begin
 
 end;
@@ -126,7 +166,7 @@ end;
 
 procedure TFrm_CipherText.NotResize;
 const
-  FIX_HEIGHT = 640;
+  FIX_HEIGHT = 580;
   FIX_WIDTH  = 626;
 begin
   Width  := FIX_WIDTH;
@@ -175,12 +215,22 @@ begin
   end;
 end;
 
+procedure TFrm_CipherText.Pnl_MemCipher2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TFrm_CipherText.Pnl_MemCipher4Click(Sender: TObject);
+begin
+
+end;
+
 procedure TFrm_CipherText.Shape7ChangeBounds(Sender: TObject);
 begin
 
 end;
 
-procedure TFrm_CipherText.SpeedButton1Click(Sender: TObject);
+procedure TFrm_CipherText.Btn_EncryptionClick(Sender: TObject);
 var
   Salt: TRHC;
   Sha : THashSHA2;
@@ -229,13 +279,13 @@ end;
 
 procedure TFrm_CipherText.ProgressBar;
 var
-  i: Integer;
+  I: Integer;
 begin
   Shp_Bar.Width := 0;
 
-  for i := 0 to Pnl_LoadingCipher.Width do
+  for I := 0 to Pnl_LoadingCipher.Width do
   begin
-    Shp_Bar.Width := i;
+    Shp_Bar.Width := I;
     Application.ProcessMessages; // mantém a UI atualizada
     Sleep(0); // controla a velocidade da animação
   end;
