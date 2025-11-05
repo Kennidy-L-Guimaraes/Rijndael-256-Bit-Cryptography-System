@@ -1,7 +1,7 @@
 object Frm_CipherText: TFrm_CipherText
-  Left = 556
+  Left = 489
   Height = 580
-  Top = 137
+  Top = 101
   Width = 589
   Caption = 'Cipher Text'
   ClientHeight = 580
@@ -51,10 +51,10 @@ object Frm_CipherText: TFrm_CipherText
         Left = 29
         Height = 51
         Top = 22
-        Width = 130
+        Width = 171
         BevelOuter = bvNone
         ClientHeight = 51
-        ClientWidth = 130
+        ClientWidth = 171
         Color = 1052172
         ParentBackground = False
         ParentColor = False
@@ -63,8 +63,8 @@ object Frm_CipherText: TFrm_CipherText
           Left = 35
           Height = 17
           Top = 18
-          Width = 95
-          Caption = 'Text Encryption'
+          Width = 130
+          Caption = 'Save Text Encryption'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
           Font.Height = -13
@@ -73,6 +73,8 @@ object Frm_CipherText: TFrm_CipherText
           Font.Quality = fqDraft
           ParentColor = False
           ParentFont = False
+          OnMouseEnter = Lbl_MenuTextEncryptMouseEnter
+          OnMouseLeave = Lbl_MenuTextEncryptMouseLeave
         end
         object Img_MenuTextEncrypt: TImage
           Left = 6
@@ -290,11 +292,7 @@ object Frm_CipherText: TFrm_CipherText
           Font.Color = 6442818
           Font.Height = -14
           Font.Name = 'Century Gothic'
-          Lines.Strings = (
-            'Paste or Type your text here'
-          )
           OnChange = Mem_InputChange
-          OnClick = Mem_OutputClick
           ParentFont = False
           TabOrder = 0
         end
@@ -418,7 +416,7 @@ object Frm_CipherText: TFrm_CipherText
       end
       object Image7: TImage
         Cursor = crHandPoint
-        Left = 95
+        Left = 94
         Height = 20
         Hint = 'This is the encrypted text: it’s formatted in Base64 to make export easier.'#13#10'This ensures critical-level encryption, providing maximum security for the content.'#13#10'It was encrypted using the Rijndael algorithm, without CBC mode, with a 256-bit key.'#13#10'Base64 encoding makes it easy to export the text without compromising integrity.'
         Top = 155
@@ -735,7 +733,7 @@ object Frm_CipherText: TFrm_CipherText
       end
       object Image4: TImage
         Cursor = crHandPoint
-        Left = 51
+        Left = 52
         Height = 20
         Hint = 'The only data you need to save is the password, the encrypted text, and the Salt (which can be public).'#13#10'The Salt does not need to be kept secret; it can be shared publicly without compromising security.'#13#10'The Salt is generated using an RHC (Random Hash Cascade) and derived from your secret word.'#13#10'This is a Salt: an essential property for encryption and decryption.'#13#10'You don''t need to store your secret word (we recommend deleting it).'#13#10'You need it along with your password to decrypt the data.'
         Top = 163
@@ -828,7 +826,7 @@ object Frm_CipherText: TFrm_CipherText
       end
       object Image5: TImage
         Cursor = crHandPoint
-        Left = 66
+        Left = 67
         Height = 20
         Hint = 'This is your secret word: it’s used to generate the Salt.'#13#10'After use, delete the secret word — there’s no need to keep it.'#13#10'Deleting it ensures greater security since it won’t be stored or shared.'#13#10'The Salt is derived from it, but once generated, the secret word is no longer needed.'#13#10'This is your secret word: it’s used to generate the Salt.'
         Top = 16
@@ -1175,7 +1173,7 @@ object Frm_CipherText: TFrm_CipherText
       object Edt_pass: TEdit
         Left = 22
         Height = 17
-        Top = 36
+        Top = 37
         Width = 155
         BorderStyle = bsNone
         Color = 1052172
@@ -1229,10 +1227,10 @@ object Frm_CipherText: TFrm_CipherText
           Shape = stRoundRect
         end
         object Edt_Repass: TEdit
-          Left = 10
+          Left = 15
           Height = 17
           Top = 12
-          Width = 187
+          Width = 169
           BorderStyle = bsNone
           Color = 1052172
           EchoMode = emPassword
@@ -1268,13 +1266,13 @@ object Frm_CipherText: TFrm_CipherText
     end
   end
   object Pnl_CipherText1: TPanel
-    Left = 167
+    Left = 200
     Height = 51
     Top = 22
-    Width = 80
+    Width = 129
     BevelOuter = bvNone
     ClientHeight = 51
-    ClientWidth = 80
+    ClientWidth = 129
     Color = 1052172
     ParentBackground = False
     ParentColor = False
@@ -1369,12 +1367,12 @@ object Frm_CipherText: TFrm_CipherText
       }
       Proportional = True
     end
-    object Label3: TLabel
+    object Lbl_MenuKeys: TLabel
       Left = 35
       Height = 17
       Top = 18
-      Width = 27
-      Caption = 'Keys'
+      Width = 82
+      Caption = 'Random Key'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -1383,10 +1381,13 @@ object Frm_CipherText: TFrm_CipherText
       Font.Quality = fqDraft
       ParentColor = False
       ParentFont = False
+      OnClick = Lbl_MenuKeysClick
+      OnMouseEnter = Lbl_MenuKeysMouseEnter
+      OnMouseLeave = Lbl_MenuKeysMouseLeave
     end
   end
   object Pnl_CipherText2: TPanel
-    Left = 254
+    Left = 329
     Height = 51
     Top = 22
     Width = 130
@@ -1397,12 +1398,14 @@ object Frm_CipherText: TFrm_CipherText
     ParentBackground = False
     ParentColor = False
     TabOrder = 2
-    object Label4: TLabel
+    object Lbl_MenuGitHub: TLabel
+      Cursor = crHandPoint
       Left = 35
       Height = 17
       Top = 18
       Width = 91
       Caption = 'About/GitHub'
+      DragCursor = crHandPoint
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -1411,6 +1414,9 @@ object Frm_CipherText: TFrm_CipherText
       Font.Quality = fqDraft
       ParentColor = False
       ParentFont = False
+      OnClick = Lbl_MenuGitHubClick
+      OnMouseEnter = Lbl_MenuGitHubMouseEnter
+      OnMouseLeave = Lbl_MenuGitHubMouseLeave
     end
     object Image3: TImage
       Left = 6
