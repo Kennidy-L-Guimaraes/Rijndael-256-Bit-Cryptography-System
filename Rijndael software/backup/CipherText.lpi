@@ -54,6 +54,13 @@
         <Filename Value="unitrhcsalt.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="unitfrmrandompass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Frm_RandomPassword"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitFrmRandomPass"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -64,6 +71,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="imgs\icons"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

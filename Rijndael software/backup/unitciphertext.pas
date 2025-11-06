@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, unitHash, unitrhcsalt,LCLIntf, DCPbase64, Windows;
+  Buttons, unitHash, unitrhcsalt,LCLIntf, DCPbase64, Windows, unitFrmRandomPass;
 
 type
 
@@ -89,6 +89,7 @@ type
     procedure Lbl_MenuKeysClick(Sender: TObject);
     procedure Lbl_MenuKeysMouseEnter(Sender: TObject);
     procedure Lbl_MenuKeysMouseLeave(Sender: TObject);
+    procedure Lbl_MenuTextEncryptClick(Sender: TObject);
     procedure Lbl_MenuTextEncryptMouseEnter(Sender: TObject);
     procedure Lbl_MenuTextEncryptMouseLeave(Sender: TObject);
     procedure Mem_OutputClick(Sender: TObject);
@@ -108,6 +109,7 @@ type
     procedure ProgressBar;
     procedure HoverLabel(ALabel: TLabel; Hover: Boolean);
     procedure generateKeyRandom;
+    procedure ConfirmSaveEncrypted;
   private
 
   public
@@ -187,6 +189,11 @@ end;
 procedure TFrm_CipherText.Lbl_MenuKeysMouseLeave(Sender: TObject);
 begin
   HoverLabel(TLabel(Sender), False);
+end;
+
+procedure TFrm_CipherText.Lbl_MenuTextEncryptClick(Sender: TObject);
+begin
+
 end;
 
 procedure TFrm_CipherText.Lbl_MenuTextEncryptMouseEnter(Sender: TObject);
@@ -336,8 +343,8 @@ begin
   for I := 0 to Pnl_LoadingCipher.Width do
   begin
     Shp_Bar.Width := I;
-    Application.ProcessMessages; // mantém a UI atualizada
-    Sleep(0); // controla a velocidade da animação
+    Application.ProcessMessages; //UI -- UPDATE
+    Sleep(0); //Controll
   end;
 end;
 
@@ -363,25 +370,58 @@ procedure TFrm_CipherText.generateKeyRandom;
 var
   RHC: TRHC;
   Letter, NumRHC, FinalKey: string;
-  RandBits: Integer;
+  RandBits, I: Integer;
 begin
-  RHC := TRHC.Create;
-  try
-    //Letters
-    Letter := Chr(Ord('A') + Random(26));
-    //RHC
-    NumRHC := RHC.RHCHashMath;
-    NumRHC := StringReplace(NumRHC, '-', '', [rfReplaceAll]);
-    NumRHC := StringReplace(NumRHC, ' ', '', [rfReplaceAll]);
-    NumRHC := Copy(NumRHC, 1, 6);
-    NumRHC := NumRHC + Chr(Ord('A') + Random(26)) + Chr(Ord('A') + Random(26));
-    //Random BITs
-    RandBits := Random(32768);
-    //Concat
-    FinalKey := Letter + '-' + NumRHC + '-' + IntToStr(RandBits) + '-' + Chr(Ord('A') + Random(26));
-    InputQuery('Random Paswword', 'This password is generated using RHC. It is not saved by the system: ', FinalKey);
-  finally
-    RHC.Free;
+  Frm_RandomPassword.Mem_Keys.Clear;
+
+  for I := 1 to 10 do
+  begin
+    RHC := TRHC.Create;
+    try
+      // Letras iniciais aleatórias
+      Letter := Chr(Ord('A') + Random(26));
+
+      // Gerar parte do RHC
+      NumRHC := RHC.RHCHashMath;
+      NumRHC := StringReplace(NumRHC, '-', '', [rfReplaceAll]);
+      NumRHC := StringReplace(NumRHC, ' ', '', [rfReplaceAll]);
+      NumRHC := Copy(NumRHC, 1, 6);
+      NumRHC := NumRHC + Chr(Ord('A') + Random(26)) + Chr(Ord('A') + Random(26));
+
+      // Número aleatório 15 bits
+      RandBits := Random(32768);
+
+      // Montar chave final
+      FinalKey := Letter + '-' + NumRHC + '-' + IntToStr(RandBits) + '-' + Chr(Ord('A') + Random(26));
+
+      // Adicionar ao Memo
+      Frm_RandomPassword.Mem_Keys.Lines.Add(Format('Your Key %d°: %s', [I, FinalKey]));
+    finally
+      RHC.Free;
+    end;
+  end;
+
+  Frm_RandomPassword.Show;
+end;
+
+procedure TFrm_CipherText.ConfirmSaveEncrypted;
+begin
+  if MessageDlg(
+    'Save Confirmation',
+    'Are you sure you want to save your encrypted text with salt?' + LineEnding + LineEnding +
+    'Note, your password will NOT be embedded in the file;' + LineEnding +
+    'only [Encrypted Text + Salt] is safe to save.' + LineEnding +
+    'Your security lies in the password.',
+    mtConfirmation, [mbYes, mbNo], 0
+  ) = mrYes then
+  begin
+    // --- ação se o usuário confirmar ---
+    ShowMessage('Encrypted text saved successfully.');
+  end
+  else
+  begin
+    // --- ação se o usuário cancelar ---
+    ShowMessage('Operation cancelled.');
   end;
 end;
 
