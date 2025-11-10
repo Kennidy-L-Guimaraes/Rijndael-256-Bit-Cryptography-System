@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, unitHash, unitrhcsalt,LCLIntf, DCPbase64, Windows, unitFrmRandomPass;
+  Buttons, unitHash, unitrhcsalt,LCLIntf, DCPbase64, Windows, unitFrmRandomPass, ShlObj;
 
 type
 
@@ -73,6 +73,8 @@ type
     Shp_BtnDecryption: TShape;
     Btn_Encryption: TSpeedButton;
     Btn_Decryption: TSpeedButton;
+    procedure Btn_DecryptionClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure Edt_SecretWordClick(Sender: TObject);
     procedure Edt_RepassClick(Sender: TObject);
     procedure Edt_passChange(Sender: TObject);
@@ -106,10 +108,16 @@ type
     procedure Shape7ChangeBounds(Sender: TObject);
     procedure Btn_EncryptionClick(Sender: TObject);
     procedure EncriptText(password: string);
+    procedure DecriptText(password: string);
     procedure ProgressBar;
     procedure HoverLabel(ALabel: TLabel; Hover: Boolean);
     procedure generateKeyRandom;
     procedure ConfirmSaveEncrypted;
+    function ValidatePasswords(out APass: string): Boolean;
+    function ValidateSecretWord(out ASecret: string): Boolean;
+    procedure PrepareAndEncrypt(const ASecret, APass: string);
+    function GetDesktopPath: string;
+
   private
 
   public
@@ -118,6 +126,12 @@ type
 
 var
   Frm_CipherText: TFrm_CipherText;
+  FinalPass : string;
+  FinalSalt : string;
+
+const
+  MIN_PASSWORD_LEN = 8;
+
 
 implementation
 
@@ -223,7 +237,7 @@ end;
 
 procedure TFrm_CipherText.NotResize;
 const
-  FIX_HEIGHT = 580;
+  FIX_HEIGHT = 640;
   FIX_WIDTH  = 626;
 begin
   Width  := FIX_WIDTH;
@@ -289,33 +303,22 @@ end;
 
 procedure TFrm_CipherText.Btn_EncryptionClick(Sender: TObject);
 var
-  Salt: TRHC;
-  Sha : THashSHA2;
-  FinalPass : string;
+  Pass, Secret: string;
 begin
-  if (Edt_SecretWord.Text = 'Enter your word') or (Trim(Edt_SecretWord.Text) = '') then
-     begin
-          ShowMessage('For security reasons, please provide us with a password or secret text (FOR SALT). ' +
-                'This is mandatory so that we can provide the best security.');
-     end
-     else
-     begin
-        Salt := TRHC.Create;
-        Sha  := THashSHA2.Create;
-    try
-       Clear(Mem_Output);
-       Clear(Edt_Salt);
+  //Validate(early exit)
+  if not ValidatePasswords(Pass) then Exit;
 
-       ProgressBar;
-       FinalPass     := Sha.GetHashString(Edt_SecretWord.Text + Edt_pass.Text + Salt.RHCHash + Edt_pass.Text + Edt_SecretWord.Text);
-       Edt_Salt.Text := FinalPass;
-       Clear(Edt_SecretWord);
-       EncriptText(FinalPass);
-    finally
-      Salt.Free;
-      sha.Free;
-    end;
-    end;
+  //Validate secret word
+  if not ValidateSecretWord(Secret) then Exit;
+
+  //Validate and Encryption
+  Btn_Encryption.Enabled := False;
+  try
+    PrepareAndEncrypt(Secret, Pass);
+  finally
+    Btn_Encryption.Enabled := True;
+    Clear(Mem_Input);
+  end;
 end;
 
 procedure TFrm_CipherText.EncriptText(password: string);
@@ -330,6 +333,21 @@ begin
   finally
   Encript.free;
   end;
+end;
+
+procedure TFrm_CipherText.DecriptText(password: string);
+var
+ Decript : THashSHA2;
+ DeText  : string;
+begin
+  Decript := THashSHA2.create;
+  try
+   DeText := Mem_Output.Text;
+   Mem_Input.lines.Add(Decript.DecryptAES(DeText, password));
+  finally
+   Decript.Free;
+  end;
+
 end;
 
 
@@ -378,23 +396,23 @@ begin
   begin
     RHC := TRHC.Create;
     try
-      // Letras iniciais aleatórias
+      //Random Letters
       Letter := Chr(Ord('A') + Random(26));
 
-      // Gerar parte do RHC
+      //Part Of Random Hash Cascade
       NumRHC := RHC.RHCHashMath;
       NumRHC := StringReplace(NumRHC, '-', '', [rfReplaceAll]);
       NumRHC := StringReplace(NumRHC, ' ', '', [rfReplaceAll]);
       NumRHC := Copy(NumRHC, 1, 6);
       NumRHC := NumRHC + Chr(Ord('A') + Random(26)) + Chr(Ord('A') + Random(26));
 
-      // Número aleatório 15 bits
+      //Random Number 15bits
       RandBits := Random(32768);
 
-      // Montar chave final
+      //FinalKEY
       FinalKey := Letter + '-' + NumRHC + '-' + IntToStr(RandBits) + '-' + Chr(Ord('A') + Random(26));
 
-      // Adicionar ao Memo
+      //AddInMemo
       Frm_RandomPassword.Mem_Keys.Lines.Add(Format('Your Key %d°: %s', [I, FinalKey]));
     finally
       RHC.Free;
@@ -405,24 +423,139 @@ begin
 end;
 
 procedure TFrm_CipherText.ConfirmSaveEncrypted;
+var
+  FileName, DesktopPath, DateStamp: string;
+  FileStream: TFileStream;
+  OutputData: TStringList;
 begin
   if MessageDlg(
     'Save Confirmation',
     'Are you sure you want to save your encrypted text with salt?' + LineEnding + LineEnding +
-    'Note, your password will NOT be embedded in the file;' + LineEnding +
-    'only [Encrypted Text + Salt] is safe to save.' + LineEnding +
+    'Note: your password will NOT be embedded in the file;' + LineEnding +
+    'only [Encrypted Text + Salt] will be saved.' + LineEnding +
     'Your security lies in the password.',
     mtConfirmation, [mbYes, mbNo], 0
   ) = mrYes then
   begin
-    // --- ação se o usuário confirmar ---
-    ShowMessage('Encrypted text saved successfully.');
+    try
+      //Get Data Time (YYYYMMDD_HHMMSS)
+      DateStamp := FormatDateTime('yyyymmdd_hhnnss', Now);
+
+      //Path to Documents
+      DesktopPath := GetDesktopPath;
+
+      //Name File
+      FileName := DesktopPath + 'Output_Rijndael_Cipher_Data_' + DateStamp + '.txt';
+
+      //Save
+      OutputData := TStringList.Create;
+      try
+        OutputData.Assign(Mem_Output.Lines);
+        OutputData.SaveToFile(FileName);
+      finally
+        OutputData.Free;
+      end;
+
+      ShowMessage('Encrypted text saved successfully at:' + LineEnding + FileName);
+    except
+      on E: Exception do
+        ShowMessage('Error saving file: ' + E.Message);
+    end;
   end
   else
-  begin
-    // --- ação se o usuário cancelar ---
     ShowMessage('Operation cancelled.');
+end;
+
+function TFrm_CipherText.ValidatePasswords(out APass: string): Boolean;
+begin
+  APass := Trim(Edt_Pass.Text);
+
+  if APass = '' then
+  begin
+    ShowMessage('Please enter a password.');
+    Result := False;
+    Exit;
   end;
+
+  if Trim(Edt_RePass.Text) = '' then
+  begin
+    ShowMessage('Please confirm the password (Re-enter).');
+    Result := False;
+    Exit;
+  end;
+
+  if APass <> Trim(Edt_RePass.Text) then
+  begin
+    ShowMessage('Passwords do not match. Please type the same password in both fields.');
+    Result := False;
+    Exit;
+  end;
+
+  if Length(APass) < MIN_PASSWORD_LEN then
+  begin
+    if MessageDlg('Weak password',
+      'The password is shorter than 8 characters. Continue anyway?',
+      mtWarning, [mbYes, mbNo], 0) = mrNo then
+    begin
+      Result := False;
+      Exit;
+    end;
+  end;
+
+  Result := True;
+end;
+
+function TFrm_CipherText.ValidateSecretWord(out ASecret: string): Boolean;
+begin
+  ASecret := Trim(Edt_SecretWord.Text);
+  if (ASecret = '') or (ASecret = 'Enter your word') then
+  begin
+    ShowMessage(
+      'For security reasons, please provide us with a password or secret text (FOR SALT).'#13#10 +
+      'This is mandatory so that we can provide the best security.'
+    );
+    Result := False;
+    Exit;
+  end;
+  Result := True;
+end;
+
+procedure TFrm_CipherText.PrepareAndEncrypt(const ASecret, APass: string);
+var
+  Salt: TRHC;
+  Sha: THashSHA2;
+begin
+  Salt := TRHC.Create;
+  Sha := THashSHA2.Create;
+  try
+    Clear(Mem_Output);
+    ProgressBar;
+
+    // DERIVATIONS
+    FinalSalt := Sha.GetHashString(ASecret + Salt.RHCHash + APass);
+    FinalPass := Sha.GetHashString(FinalSalt + APass + FinalSalt);
+
+    //SALT FINAL
+    Edt_Salt.Text := FinalSalt;
+
+    // CLEAR
+    Clear(Edt_SecretWord);
+    Clear(Edt_Pass);
+    Clear(Edt_RePass);
+
+    EncriptText(FinalPass);
+  finally
+    Sha.Free;
+    Salt.Free;
+  end;
+end;
+
+function TFrm_CipherText.GetDesktopPath: string;
+var
+  Path: array[0..MAX_PATH] of Char;
+begin
+  SHGetFolderPath(0, CSIDL_PERSONAL, 0, 0, @Path);
+  Result := IncludeTrailingPathDelimiter(StrPas(Path));
 end;
 
 procedure TFrm_CipherText.FormCreate(Sender: TObject);
@@ -446,6 +579,54 @@ procedure TFrm_CipherText.Edt_SecretWordClick(Sender: TObject);
 begin
   Clear(Edt_SecretWord);
 end;
+
+procedure TFrm_CipherText.Btn_DecryptionClick(Sender: TObject);
+ var
+  Password: string;
+  Sha: THashSHA2;
+  FinalPassLocal, FinalSaltLocal: string;
+begin
+  //ValidatePasswords
+  if not ValidatePasswords(Password) then Exit;
+  ProgressBar;
+
+  Sha := THashSHA2.Create;
+  try
+    //SALT GET
+    FinalSaltLocal := Trim(Edt_Salt.Text);
+    if FinalSaltLocal = '' then
+    begin
+      ShowMessage('Salt not found. Cannot decrypt.');
+      Exit;
+    end;
+
+    //Same Pass
+    FinalPassLocal := Sha.GetHashString(FinalSaltLocal + Password + FinalSaltLocal);
+
+    //Decript
+    DecriptText(FinalPassLocal);
+  finally
+    Sha.Free;
+  end;
+end;
+
+procedure TFrm_CipherText.Button1Click(Sender: TObject);
+ var
+   Enc, Dec: string;
+   Key: string;
+   Sha: THashSHA2;
+ begin
+   Key := 'senha123';
+   Sha := THashSHA2.Create;
+   try
+     Enc := Sha.EncryptAES('Texto simples de teste', Key);
+     Dec := Sha.DecryptAES(Enc, Key);
+     ShowMessage('Original: Texto simples de teste' + sLineBreak +
+                 'Decrypted: ' + Dec);
+   finally
+     Sha.Free;
+   end;
+ end;
 
 procedure TFrm_CipherText.Edt_passClick(Sender: TObject);
 begin

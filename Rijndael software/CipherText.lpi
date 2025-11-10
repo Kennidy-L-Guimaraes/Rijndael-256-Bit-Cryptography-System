@@ -58,6 +58,7 @@
         <Filename Value="unitfrmrandompass.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Frm_RandomPassword"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitFrmRandomPass"/>
       </Unit>

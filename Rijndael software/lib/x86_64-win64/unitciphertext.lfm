@@ -10,6 +10,7 @@ object Frm_CipherText: TFrm_CipherText
   DesignTimePPI = 106
   OnCreate = FormCreate
   Position = poScreenCenter
+  LCLVersion = '3.6.0.0'
   object Panel1: TPanel
     Left = 0
     Height = 640
@@ -610,7 +611,7 @@ object Frm_CipherText: TFrm_CipherText
           Font.Name = 'Gadugi'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
-          OnClick = Btn_EncryptionClick
+          OnClick = Btn_DecryptionClick
           ParentFont = False
         end
       end

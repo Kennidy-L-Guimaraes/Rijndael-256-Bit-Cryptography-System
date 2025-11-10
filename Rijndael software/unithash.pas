@@ -18,6 +18,7 @@ type
       {PUBLIC DECLARATIONS}
       class function GetHashString(const InputText: string):string;
       function EncryptAES(const AText, AKey: string): string;
+      function DecryptAES(const AText, AKey: string): string;
       //function GenerateRandomIV
     private
       {PRIVATE DECLARATIONS}
@@ -66,6 +67,28 @@ begin
     Cipher.Init(KeyHash[1], 256, @IV);
     Cipher.EncryptCBC(Data[1], Data[1], Length(Data));
     Result := Base64EncodeStr(Data);
+  finally
+    Cipher.Burn;
+    Cipher.Free;
+  end;
+end;
+
+function THashSHA2.DecryptAES(const AText, AKey: string): string;
+var
+  Cipher: TDCP_rijndael;
+  KeyHash: string;
+  IV: Array [0..15] of TBytes;
+  Data: string;
+begin
+  Data := Base64DecodeStr(AText);
+  Cipher := TDCP_rijndael.Create(nil);
+  try
+    KeyHash := AKey;
+    FillChar(IV, SizeOf(IV), 0);
+
+    Cipher.Init(KeyHash[1], 256, @IV);
+    Cipher.DecryptCBC(Data[1], Data[1], Length(Data));
+    Result := UTF8Decode(Data);
   finally
     Cipher.Burn;
     Cipher.Free;
