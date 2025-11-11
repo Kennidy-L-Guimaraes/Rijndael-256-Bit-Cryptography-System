@@ -1,7 +1,7 @@
 object Frm_CipherText: TFrm_CipherText
-  Left = 489
+  Left = 491
   Height = 580
-  Top = 101
+  Top = 94
   Width = 589
   Caption = 'Cipher Text'
   ClientHeight = 580

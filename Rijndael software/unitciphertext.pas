@@ -240,12 +240,12 @@ const
   FIX_WIDTH  = 626;
 begin
   Width  := FIX_WIDTH;
-  Height := FIX_HEIGHT;
+  //Height := FIX_HEIGHT;
 
   Constraints.MinWidth  := FIX_WIDTH;
   Constraints.MaxWidth  := FIX_WIDTH;
-  Constraints.MinHeight := FIX_HEIGHT;
-  Constraints.MaxHeight := FIX_HEIGHT;
+  //Constraints.MinHeight := FIX_HEIGHT;
+  //Constraints.MaxHeight := FIX_HEIGHT;
 
   BorderIcons := BorderIcons - [biMaximize];
   BorderStyle := bsSingle;
