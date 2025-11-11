@@ -1,25 +1,24 @@
 object Frm_CipherText: TFrm_CipherText
   Left = 489
-  Height = 640
+  Height = 580
   Top = 101
-  Width = 650
+  Width = 589
   Caption = 'Cipher Text'
-  ClientHeight = 640
-  ClientWidth = 650
+  ClientHeight = 580
+  ClientWidth = 589
   Color = 1511693
-  DesignTimePPI = 106
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '3.6.0.0'
+  LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
-    Height = 640
+    Height = 580
     Top = 0
-    Width = 650
+    Width = 589
     Align = alClient
     BevelOuter = bvNone
-    ClientHeight = 640
-    ClientWidth = 650
+    ClientHeight = 580
+    ClientWidth = 589
     Color = 1775122
     ParentBackground = False
     ParentColor = False
@@ -27,48 +26,48 @@ object Frm_CipherText: TFrm_CipherText
     OnClick = Panel1Click
     object Pnl_LeftMenu: TPanel
       Left = 0
-      Height = 103
+      Height = 93
       Top = 0
-      Width = 650
+      Width = 589
       Align = alTop
       BevelOuter = bvNone
-      ClientHeight = 103
-      ClientWidth = 650
+      ClientHeight = 93
+      ClientWidth = 589
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 0
-      object Shape2: TShape
-        Left = 17
-        Height = 73
-        Top = 15
-        Width = 618
+      object Shp_menu: TShape
+        Left = 15
+        Height = 65
+        Top = 14
+        Width = 560
         Anchors = [akTop, akLeft, akRight, akBottom]
         Brush.Color = 1052172
         Pen.Style = psClear
         Shape = stRoundRect
       end
       object Pnl_CipherText: TPanel
-        Left = 32
-        Height = 56
-        Top = 24
-        Width = 189
+        Left = 29
+        Height = 51
+        Top = 22
+        Width = 171
         BevelOuter = bvNone
-        ClientHeight = 56
-        ClientWidth = 189
+        ClientHeight = 51
+        ClientWidth = 171
         Color = 1052172
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
         object Lbl_MenuTextEncrypt: TLabel
-          Left = 39
-          Height = 16
-          Top = 20
-          Width = 132
+          Left = 35
+          Height = 17
+          Top = 18
+          Width = 130
           Caption = 'Save Text Encryption'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
-          Font.Height = -14
+          Font.Height = -13
           Font.Name = 'Century Gothic'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
@@ -79,10 +78,10 @@ object Frm_CipherText: TFrm_CipherText
           OnMouseLeave = Lbl_MenuTextEncryptMouseLeave
         end
         object Img_MenuTextEncrypt: TImage
-          Left = 7
-          Height = 28
-          Top = 14
-          Width = 28
+          Left = 6
+          Height = 25
+          Top = 13
+          Width = 25
           Picture.Data = {
             1754506F727461626C654E6574776F726B47726170686963820C000089504E47
             0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -189,147 +188,141 @@ object Frm_CipherText: TFrm_CipherText
           Proportional = True
         end
       end
-      object Image8: TImage
-        Left = 212
-        Height = 22
-        Top = 124
-        Width = 22
-      end
     end
     object Pnl_MemCipher: TPanel
-      Left = 23
-      Height = 327
-      Top = 186
-      Width = 421
+      Left = 21
+      Height = 296
+      Top = 168
+      Width = 381
       BevelOuter = bvNone
-      ClientHeight = 327
-      ClientWidth = 421
+      ClientHeight = 296
+      ClientWidth = 381
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 1
-      object Label5: TLabel
-        Left = 9
+      object Lbl_YourText: TLabel
+        Left = 8
         Height = 21
-        Top = 8
-        Width = 74
+        Top = 7
+        Width = 73
         Caption = 'Your Text'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
       end
-      object Panel3: TPanel
-        Left = 9
-        Height = 110
-        Top = 32
-        Width = 399
+      object Pnl_InputText: TPanel
+        Left = 8
+        Height = 100
+        Top = 29
+        Width = 361
         BevelOuter = bvNone
-        Caption = 'Panel3'
-        ClientHeight = 110
-        ClientWidth = 399
+        Caption = 'Pnl_InputText'
+        ClientHeight = 100
+        ClientWidth = 361
         ParentBackground = False
         TabOrder = 0
-        OnClick = Panel3Click
-        object Shape4: TShape
+        OnClick = Pnl_InputTextClick
+        object Shp_InputText: TShape
           Left = 0
-          Height = 94
-          Top = 8
-          Width = 385
+          Height = 86
+          Top = 7
+          Width = 348
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
           Shape = stRoundRect
         end
         object Mem_Input: TMemo
-          Left = 9
-          Height = 72
-          Top = 15
-          Width = 351
+          Left = 8
+          Height = 65
+          Top = 14
+          Width = 318
           BorderStyle = bsNone
           Color = 1052172
           Font.Color = 6442818
-          Font.Height = -15
+          Font.Height = -14
           Font.Name = 'Century Gothic'
           Lines.Strings = (
             'Paste or Type your text here'
           )
-          ParentFont = False
-          TabOrder = 0
           OnChange = Mem_InputChange
           OnClick = Mem_InputClick
+          ParentFont = False
+          TabOrder = 0
         end
       end
-      object Panel4: TPanel
-        Left = 9
-        Height = 110
-        Top = 194
-        Width = 399
+      object Pnl_OutputText: TPanel
+        Left = 8
+        Height = 100
+        Top = 176
+        Width = 361
         BevelOuter = bvNone
-        Caption = 'Panel4'
-        ClientHeight = 110
-        ClientWidth = 399
+        Caption = 'Pnl_OutputText'
+        ClientHeight = 100
+        ClientWidth = 361
         ParentBackground = False
         TabOrder = 1
-        OnClick = Panel3Click
-        object Shape5: TShape
+        OnClick = Pnl_InputTextClick
+        object Shp_OutputText: TShape
           Left = 0
-          Height = 94
-          Top = 8
-          Width = 385
+          Height = 86
+          Top = 7
+          Width = 348
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
           Shape = stRoundRect
         end
         object Mem_Output: TMemo
-          Left = 9
-          Height = 72
-          Top = 15
-          Width = 351
+          Left = 8
+          Height = 65
+          Top = 14
+          Width = 318
           BorderStyle = bsNone
           Color = 1052172
           Font.Color = 6442818
-          Font.Height = -15
+          Font.Height = -14
           Font.Name = 'Century Gothic'
+          OnChange = Mem_InputChange
           ParentFont = False
           TabOrder = 0
-          OnChange = Mem_InputChange
         end
       end
-      object Label7: TLabel
-        Left = 9
+      object Lbl_OutputText: TLabel
+        Left = 8
         Height = 21
-        Top = 170
+        Top = 154
         Width = 81
         Caption = 'Encrypted'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
       end
-      object Shape13: TShape
-        Left = 96
-        Height = 23
-        Top = 10
-        Width = 25
+      object Shp_SaltInfoInput: TShape
+        Left = 86
+        Height = 21
+        Top = 8
+        Width = 23
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
-      object Image6: TImage
+      object Img_SaltInfoInput: TImage
         Cursor = crHandPoint
-        Left = 96
-        Height = 22
+        Left = 87
+        Height = 20
         Hint = 'This is the text to be encrypted: only the plain text content will be encrypted, without line breaks.'#13#10'That means line breaks will not be encrypted, only the raw, direct text.'#13#10'Make sure the content to be encrypted is plain text without extra formatting.'
-        Top = 9
-        Width = 22
+        Top = 8
+        Width = 20
         ParentShowHint = False
         Picture.Data = {
           1754506F727461626C654E6574776F726B47726170686963B208000089504E47
@@ -407,22 +400,22 @@ object Frm_CipherText: TFrm_CipherText
         Proportional = True
         ShowHint = True
       end
-      object Shape14: TShape
-        Left = 104
-        Height = 23
-        Top = 171
-        Width = 25
+      object Shp_SaltInfoOutput: TShape
+        Left = 93
+        Height = 21
+        Top = 154
+        Width = 23
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
-      object Image7: TImage
+      object Img_SaltInfoOutput: TImage
         Cursor = crHandPoint
-        Left = 104
-        Height = 22
+        Left = 94
+        Height = 20
         Hint = 'This is the encrypted text: it’s formatted in Base64 to make export easier.'#13#10'This ensures critical-level encryption, providing maximum security for the content.'#13#10'It was encrypted using the Rijndael algorithm, without CBC mode, with a 256-bit key.'#13#10'Base64 encoding makes it easy to export the text without compromising integrity.'
-        Top = 171
-        Width = 22
+        Top = 155
+        Width = 20
         ParentShowHint = False
         Picture.Data = {
           1754506F727461626C654E6574776F726B47726170686963B208000089504E47
@@ -502,24 +495,24 @@ object Frm_CipherText: TFrm_CipherText
       end
     end
     object Pnl_MemCipher1: TPanel
-      Left = 32
-      Height = 93
-      Top = 521
-      Width = 412
+      Left = 29
+      Height = 84
+      Top = 472
+      Width = 373
       BevelOuter = bvNone
-      ClientHeight = 93
-      ClientWidth = 412
+      ClientHeight = 84
+      ClientWidth = 373
       ParentBackground = False
       TabOrder = 2
       object Pnl_LoadingCipher: TPanel
         Left = 0
-        Height = 19
-        Top = 74
-        Width = 412
+        Height = 17
+        Top = 67
+        Width = 373
         Align = alBottom
         BevelOuter = bvNone
-        ClientHeight = 19
-        ClientWidth = 412
+        ClientHeight = 17
+        ClientWidth = 373
         Color = 3352866
         ParentBackground = False
         ParentColor = False
@@ -527,7 +520,7 @@ object Frm_CipherText: TFrm_CipherText
         OnClick = Pnl_LoadingCipherClick
         object Shp_Bar: TShape
           Left = 0
-          Height = 19
+          Height = 17
           Top = 0
           Width = 0
           Align = alLeft
@@ -537,19 +530,19 @@ object Frm_CipherText: TFrm_CipherText
       end
       object Pnl_BtnEncryption: TPanel
         Left = 2
-        Height = 55
+        Height = 50
         Top = 0
-        Width = 199
+        Width = 180
         BevelOuter = bvNone
-        ClientHeight = 55
-        ClientWidth = 199
+        ClientHeight = 50
+        ClientWidth = 180
         ParentBackground = False
         TabOrder = 1
         object Shp_BtnEncryption: TShape
           Left = 0
-          Height = 55
+          Height = 50
           Top = 0
-          Width = 199
+          Width = 180
           Align = alClient
           Brush.Color = 16155195
           Pen.Style = psClear
@@ -558,16 +551,16 @@ object Frm_CipherText: TFrm_CipherText
         object Btn_Encryption: TSpeedButton
           Cursor = crHandPoint
           Left = 0
-          Height = 55
+          Height = 50
           Top = 0
-          Width = 199
+          Width = 180
           Align = alClient
           Caption = 'Encryption'
           DragCursor = crHandPoint
           Flat = True
           Font.CharSet = ANSI_CHARSET
           Font.Color = clMenu
-          Font.Height = -22
+          Font.Height = -20
           Font.Name = 'Gadugi'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
@@ -576,20 +569,20 @@ object Frm_CipherText: TFrm_CipherText
         end
       end
       object Pnl_BtnDecryption: TPanel
-        Left = 213
-        Height = 55
+        Left = 193
+        Height = 50
         Top = 1
-        Width = 199
+        Width = 180
         BevelOuter = bvNone
-        ClientHeight = 55
-        ClientWidth = 199
+        ClientHeight = 50
+        ClientWidth = 180
         ParentBackground = False
         TabOrder = 2
         object Shp_BtnDecryption: TShape
           Left = 0
-          Height = 55
+          Height = 50
           Top = 0
-          Width = 199
+          Width = 180
           Align = alClient
           Brush.Color = 16155195
           Pen.Style = psClear
@@ -598,16 +591,16 @@ object Frm_CipherText: TFrm_CipherText
         object Btn_Decryption: TSpeedButton
           Cursor = crHandPoint
           Left = 0
-          Height = 55
+          Height = 50
           Top = 0
-          Width = 199
+          Width = 180
           Align = alClient
           Caption = 'Decryption'
           DragCursor = crHandPoint
           Flat = True
           Font.CharSet = ANSI_CHARSET
           Font.Color = clMenu
-          Font.Height = -22
+          Font.Height = -20
           Font.Name = 'Gadugi'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
@@ -617,102 +610,102 @@ object Frm_CipherText: TFrm_CipherText
       end
     end
     object Pnl_MemCipher2: TPanel
-      Left = 456
-      Height = 398
-      Top = 177
-      Width = 151
+      Left = 413
+      Height = 360
+      Top = 160
+      Width = 137
       BevelOuter = bvNone
-      ClientHeight = 398
-      ClientWidth = 151
+      ClientHeight = 360
+      ClientWidth = 137
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 3
       OnClick = Pnl_MemCipher2Click
-      object Label8: TLabel
-        Left = 9
-        Height = 44
+      object Lbl_SecretWord: TLabel
+        Left = 8
+        Height = 40
         Top = -1
-        Width = 61
+        Width = 55
         AutoSize = False
         Caption = 'Secret Word'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         WordWrap = True
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
-      object Label9: TLabel
-        Left = 18
-        Height = 71
-        Top = 88
-        Width = 123
+      object Lbl_TextSecretWord: TLabel
+        Left = 16
+        Height = 64
+        Top = 80
+        Width = 111
         AutoSize = False
         Caption = 'For security reasons, please provide us with a secret word or text (FOR SALT).'
         Font.CharSet = ANSI_CHARSET
         Font.Color = 4737279
-        Font.Height = -12
+        Font.Height = -11
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         WordWrap = True
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
-      object Shape10: TShape
-        Left = 16
-        Height = 32
-        Top = 214
-        Width = 132
+      object Shp_Salt: TShape
+        Left = 9
+        Height = 29
+        Top = 192
+        Width = 120
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
-      object Label12: TLabel
-        Left = 9
+      object Lbl_Salt: TLabel
+        Left = 8
         Height = 21
-        Top = 178
-        Width = 44
+        Top = 161
+        Width = 36
         Caption = 'SALT'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
-      object Label13: TLabel
-        Left = 18
-        Height = 71
-        Top = 256
-        Width = 123
+      object Lbl_TextSalt: TLabel
+        Left = 16
+        Height = 64
+        Top = 232
+        Width = 111
         AutoSize = False
         Caption = 'Please note that Salt is important for decrypting the data.'
         Font.CharSet = ANSI_CHARSET
         Font.Color = 4737279
-        Font.Height = -12
+        Font.Height = -11
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         WordWrap = True
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
       object Edt_Salt: TEdit
-        Left = 18
-        Height = 16
-        Top = 218
-        Width = 115
+        Left = 16
+        Height = 17
+        Top = 197
+        Width = 104
         BorderStyle = bsNone
         Color = 1052172
         Font.CharSet = ANSI_CHARSET
@@ -720,26 +713,26 @@ object Frm_CipherText: TFrm_CipherText
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        OnChange = Edt_passChange
         ParentFont = False
         TabOrder = 0
-        OnChange = Edt_passChange
       end
-      object Shape11: TShape
-        Left = 56
-        Height = 23
-        Top = 180
-        Width = 25
+      object Shp_SaltInfo: TShape
+        Left = 50
+        Height = 21
+        Top = 162
+        Width = 23
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
-      object Image4: TImage
+      object Img_SaltInfo: TImage
         Cursor = crHandPoint
-        Left = 57
-        Height = 22
+        Left = 52
+        Height = 20
         Hint = 'The only data you need to save is the password, the encrypted text, and the Salt (which can be public).'#13#10'The Salt does not need to be kept secret; it can be shared publicly without compromising security.'#13#10'The Salt is generated using an RHC (Random Hash Cascade) and derived from your secret word.'#13#10'This is a Salt: an essential property for encryption and decryption.'#13#10'You don''t need to store your secret word (we recommend deleting it).'#13#10'You need it along with your password to decrypt the data.'
-        Top = 180
-        Width = 22
+        Top = 163
+        Width = 20
         ParentShowHint = False
         Picture.Data = {
           1754506F727461626C654E6574776F726B47726170686963B208000089504E47
@@ -817,22 +810,22 @@ object Frm_CipherText: TFrm_CipherText
         Proportional = True
         ShowHint = True
       end
-      object Shape12: TShape
-        Left = 73
-        Height = 23
-        Top = 18
-        Width = 25
+      object Shp_InfoSecretWord: TShape
+        Left = 65
+        Height = 21
+        Top = 15
+        Width = 23
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
-      object Image5: TImage
+      object Img_InfoSecretWord: TImage
         Cursor = crHandPoint
-        Left = 74
-        Height = 22
+        Left = 67
+        Height = 20
         Hint = 'This is your secret word: it’s used to generate the Salt.'#13#10'After use, delete the secret word — there’s no need to keep it.'#13#10'Deleting it ensures greater security since it won’t be stored or shared.'#13#10'The Salt is derived from it, but once generated, the secret word is no longer needed.'#13#10'This is your secret word: it’s used to generate the Salt.'
-        Top = 18
-        Width = 22
+        Top = 16
+        Width = 20
         ParentShowHint = False
         Picture.Data = {
           1754506F727461626C654E6574776F726B47726170686963B208000089504E47
@@ -910,20 +903,20 @@ object Frm_CipherText: TFrm_CipherText
         Proportional = True
         ShowHint = True
       end
-      object Shape6: TShape
-        Left = 16
-        Height = 32
-        Top = 51
-        Width = 132
+      object Shp_SecretWord: TShape
+        Left = 9
+        Height = 29
+        Top = 45
+        Width = 120
         Anchors = []
         Brush.Color = 1052172
         Shape = stRoundRect
       end
       object Edt_SecretWord: TEdit
-        Left = 25
-        Height = 16
-        Top = 59
-        Width = 115
+        Left = 23
+        Height = 17
+        Top = 53
+        Width = 104
         BorderStyle = bsNone
         Color = 1052172
         Font.CharSet = ANSI_CHARSET
@@ -931,17 +924,17 @@ object Frm_CipherText: TFrm_CipherText
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        OnChange = Edt_passChange
+        OnClick = Edt_SecretWordClick
         ParentFont = False
         TabOrder = 1
         Text = 'Enter your word'
-        OnChange = Edt_passChange
-        OnClick = Edt_SecretWordClick
       end
       object Img_ClosEyes: TImage
-        Left = 26
-        Height = 29
-        Top = 336
-        Width = 29
+        Left = 24
+        Height = 26
+        Top = 304
+        Width = 26
         Picture.Data = {
           1754506F727461626C654E6574776F726B477261706869636306000089504E47
           0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -1000,10 +993,10 @@ object Frm_CipherText: TFrm_CipherText
         Visible = False
       end
       object Img_OpenEyes: TImage
-        Left = 62
-        Height = 29
-        Top = 336
-        Width = 29
+        Left = 56
+        Height = 26
+        Top = 304
+        Width = 26
         Picture.Data = {
           1754506F727461626C654E6574776F726B477261706869630F07000089504E47
           0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -1069,50 +1062,50 @@ object Frm_CipherText: TFrm_CipherText
       end
     end
     object Pnl_MemCipher3: TPanel
-      Left = 23
-      Height = 80
-      Top = 97
-      Width = 273
+      Left = 21
+      Height = 72
+      Top = 88
+      Width = 247
       BevelOuter = bvNone
-      ClientHeight = 80
-      ClientWidth = 273
+      ClientHeight = 72
+      ClientWidth = 247
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 4
-      object Label10: TLabel
-        Left = 9
+      object Lbl_Pass: TLabel
+        Left = 8
         Height = 21
         Top = 0
-        Width = 79
+        Width = 72
         Caption = 'Password'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
-      object Shape7: TShape
-        Left = 20
-        Height = 41
-        Top = 29
-        Width = 221
+      object Shp_Pass: TShape
+        Left = 9
+        Height = 37
+        Top = 24
+        Width = 200
         Anchors = []
         Brush.Color = 1052172
-        OnChangeBounds = Shape7ChangeBounds
+        OnChangeBounds = Shp_PassChangeBounds
         Shape = stRoundRect
       end
       object Img_PassEyes: TImage
         Cursor = crHandPoint
-        Left = 202
-        Height = 22
+        Left = 183
+        Height = 20
         Hint = 'PASSWORD SECURITY'
-        Top = 38
-        Width = 22
+        Top = 34
+        Width = 20
         OnClick = Img_PassEyesClick
         ParentShowHint = False
         Picture.Data = {
@@ -1173,10 +1166,10 @@ object Frm_CipherText: TFrm_CipherText
         ShowHint = True
       end
       object Edt_pass: TEdit
-        Left = 31
-        Height = 16
-        Top = 43
-        Width = 160
+        Left = 28
+        Height = 17
+        Top = 39
+        Width = 145
         BorderStyle = bsNone
         Color = 1052172
         EchoMode = emPassword
@@ -1185,54 +1178,54 @@ object Frm_CipherText: TFrm_CipherText
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        OnChange = Edt_passChange
+        OnClick = Edt_passClick
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
         Text = 'Password'
-        OnChange = Edt_passChange
-        OnClick = Edt_passClick
       end
     end
     object Pnl_MemCipher4: TPanel
-      Left = 265
-      Height = 80
-      Top = 97
-      Width = 266
+      Left = 240
+      Height = 72
+      Top = 88
+      Width = 241
       BevelOuter = bvNone
-      ClientHeight = 80
-      ClientWidth = 266
+      ClientHeight = 72
+      ClientWidth = 241
       Color = 1775122
       ParentBackground = False
       ParentColor = False
       TabOrder = 5
       OnClick = Pnl_MemCipher4Click
-      object Panel7: TPanel
-        Left = 18
-        Height = 46
-        Top = 26
-        Width = 239
+      object Pnl_Repass: TPanel
+        Left = 16
+        Height = 42
+        Top = 24
+        Width = 216
         BevelOuter = bvNone
         Caption = 'Panel5'
-        ClientHeight = 46
-        ClientWidth = 239
+        ClientHeight = 42
+        ClientWidth = 216
         ParentBackground = False
         TabOrder = 0
-        OnClick = Panel3Click
-        object Shape8: TShape
+        OnClick = Pnl_InputTextClick
+        object Shp_Repass: TShape
           Left = 2
-          Height = 40
+          Height = 37
           Top = 0
-          Width = 222
+          Width = 200
           Anchors = [akTop, akLeft, akRight, akBottom]
           Brush.Color = 1052172
-          OnChangeBounds = Shape7ChangeBounds
+          OnChangeBounds = Shp_PassChangeBounds
           Shape = stRoundRect
         end
         object Edt_Repass: TEdit
-          Left = 17
-          Height = 16
-          Top = 15
-          Width = 187
+          Left = 15
+          Height = 17
+          Top = 14
+          Width = 169
           BorderStyle = bsNone
           Color = 1052172
           EchoMode = emPassword
@@ -1241,49 +1234,49 @@ object Frm_CipherText: TFrm_CipherText
           Font.Name = 'Century Gothic'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          OnChange = Edt_passChange
+          OnClick = Edt_RepassClick
           ParentFont = False
           PasswordChar = '*'
           TabOrder = 0
           Text = 're-password'
-          OnChange = Edt_passChange
-          OnClick = Edt_RepassClick
         end
       end
-      object Label11: TLabel
-        Left = 18
+      object Lbl_Repass: TLabel
+        Left = 16
         Height = 21
         Top = 0
-        Width = 110
+        Width = 96
         Caption = 'RE-Password'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -16
         Font.Name = 'Century Gothic'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
-        OnClick = Label8Click
+        OnClick = Lbl_SecretWordClick
       end
     end
   end
   object Pnl_CipherText1: TPanel
-    Left = 221
-    Height = 56
-    Top = 24
-    Width = 142
+    Left = 200
+    Height = 51
+    Top = 22
+    Width = 129
     BevelOuter = bvNone
-    ClientHeight = 56
-    ClientWidth = 142
+    ClientHeight = 51
+    ClientWidth = 129
     Color = 1052172
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
-    object Image2: TImage
-      Left = 7
-      Height = 28
-      Top = 14
-      Width = 28
+    object Img_RandomKey: TImage
+      Left = 6
+      Height = 25
+      Top = 13
+      Width = 25
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963E609000089504E47
         0D0A1A0A0000000D494844520000006400000064080600000070E29554000000
@@ -1370,14 +1363,14 @@ object Frm_CipherText: TFrm_CipherText
       Proportional = True
     end
     object Lbl_MenuKeys: TLabel
-      Left = 39
-      Height = 16
-      Top = 20
-      Width = 81
+      Left = 35
+      Height = 17
+      Top = 18
+      Width = 82
       Caption = 'Random Key'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
-      Font.Height = -14
+      Font.Height = -13
       Font.Name = 'Century Gothic'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -1389,28 +1382,28 @@ object Frm_CipherText: TFrm_CipherText
     end
   end
   object Pnl_CipherText2: TPanel
-    Left = 363
-    Height = 56
-    Top = 24
-    Width = 144
+    Left = 329
+    Height = 51
+    Top = 22
+    Width = 130
     BevelOuter = bvNone
-    ClientHeight = 56
-    ClientWidth = 144
+    ClientHeight = 51
+    ClientWidth = 130
     Color = 1052172
     ParentBackground = False
     ParentColor = False
     TabOrder = 2
     object Lbl_MenuGitHub: TLabel
       Cursor = crHandPoint
-      Left = 39
-      Height = 16
-      Top = 20
-      Width = 84
+      Left = 35
+      Height = 17
+      Top = 18
+      Width = 91
       Caption = 'About/GitHub'
       DragCursor = crHandPoint
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
-      Font.Height = -14
+      Font.Height = -13
       Font.Name = 'Century Gothic'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
@@ -1420,11 +1413,11 @@ object Frm_CipherText: TFrm_CipherText
       OnMouseEnter = Lbl_MenuGitHubMouseEnter
       OnMouseLeave = Lbl_MenuGitHubMouseLeave
     end
-    object Image3: TImage
-      Left = 7
-      Height = 28
-      Top = 14
-      Width = 28
+    object Img_AboutGitHUB: TImage
+      Left = 6
+      Height = 25
+      Top = 13
+      Width = 25
       Picture.Data = {
         1754506F727461626C654E6574776F726B477261706869633303000089504E47
         0D0A1A0A0000000D494844520000006400000064080600000070E29554000000

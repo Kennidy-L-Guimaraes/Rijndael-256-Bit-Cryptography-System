@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="47" Y="13"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="121"/>
       </Unit>
       <Unit>
         <Filename Value="unitciphertext.pas"/>
@@ -20,8 +20,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCipherText"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="88" Y="9"/>
-        <UsageCount Value="120"/>
+        <TopLine Value="439"/>
+        <CursorPos X="10" Y="452"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,7 +33,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="62"/>
         <CursorPos X="33" Y="91"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="101"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -41,7 +42,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="223"/>
         <CursorPos X="54" Y="243"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="80"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -54,7 +55,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos X="9" Y="40"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="30"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\DCPcrypt\Ciphers\dcprijndael.pas"/>
@@ -210,15 +211,15 @@
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
-        <Caret Line="9" Column="80" TopLine="481"/>
-      </Position>
-      <Position>
-        <Filename Value="unitciphertext.pas"/>
         <Caret Line="557" Column="66" TopLine="541"/>
       </Position>
       <Position>
         <Filename Value="unitciphertext.pas"/>
         <Caret Line="559" Column="5" TopLine="541"/>
+      </Position>
+      <Position>
+        <Filename Value="unitciphertext.pas"/>
+        <Caret Line="453" Column="40" TopLine="439"/>
       </Position>
     </JumpHistory>
     <RunParams>

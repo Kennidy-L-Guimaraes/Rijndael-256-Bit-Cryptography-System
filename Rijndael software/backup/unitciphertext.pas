@@ -20,33 +20,32 @@ type
     Img_ClosEyes: TImage;
     Img_OpenEyes: TImage;
     Img_MenuTextEncrypt: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
-    Image5: TImage;
-    Image6: TImage;
-    Image7: TImage;
-    Image8: TImage;
+    Img_RandomKey: TImage;
+    Img_AboutGitHUB: TImage;
+    Img_SaltInfo: TImage;
+    Img_InfoSecretWord: TImage;
+    Img_SaltInfoInput: TImage;
+    Img_SaltInfoOutput: TImage;
     Img_PassEyes: TImage;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label13: TLabel;
+    Lbl_Pass: TLabel;
+    Lbl_Repass: TLabel;
+    Lbl_Salt: TLabel;
+    Lbl_TextSalt: TLabel;
     Lbl_MenuKeys: TLabel;
     Lbl_MenuTextEncrypt: TLabel;
     Lbl_MenuGitHub: TLabel;
-    Label5: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
+    Lbl_YourText: TLabel;
+    Lbl_OutputText: TLabel;
+    Lbl_SecretWord: TLabel;
+    Lbl_TextSecretWord: TLabel;
     Mem_Input: TMemo;
     Mem_Output: TMemo;
     Panel1: TPanel;
     Pnl_BtnEncryption: TPanel;
-    Panel3: TPanel;
-    Panel4: TPanel;
+    Pnl_InputText: TPanel;
+    Pnl_OutputText: TPanel;
     Pnl_BtnDecryption: TPanel;
-    Panel7: TPanel;
+    Pnl_Repass: TPanel;
     Pnl_CipherText1: TPanel;
     Pnl_CipherText2: TPanel;
     Pnl_LoadingCipher: TPanel;
@@ -57,19 +56,19 @@ type
     Pnl_MemCipher2: TPanel;
     Pnl_MemCipher3: TPanel;
     Pnl_MemCipher4: TPanel;
-    Shape11: TShape;
-    Shape12: TShape;
-    Shape13: TShape;
-    Shape14: TShape;
-    Shape6: TShape;
-    Shape7: TShape;
+    Shp_SaltInfo: TShape;
+    Shp_InfoSecretWord: TShape;
+    Shp_SaltInfoInput: TShape;
+    Shp_SaltInfoOutput: TShape;
+    Shp_SecretWord: TShape;
+    Shp_Pass: TShape;
     Shp_Bar: TShape;
-    Shape10: TShape;
-    Shape2: TShape;
+    Shp_Salt: TShape;
+    Shp_menu: TShape;
     Shp_BtnEncryption: TShape;
-    Shape4: TShape;
-    Shape5: TShape;
-    Shape8: TShape;
+    Shp_InputText: TShape;
+    Shp_OutputText: TShape;
+    Shp_Repass: TShape;
     Shp_BtnDecryption: TShape;
     Btn_Encryption: TSpeedButton;
     Btn_Decryption: TSpeedButton;
@@ -86,7 +85,7 @@ type
     procedure Img_PassEyesDblClick(Sender: TObject);
     procedure Lbl_MenuGitHubClick(Sender: TObject);
     procedure Lbl_MenuGitHubMouseEnter(Sender: TObject);
-    procedure Label8Click(Sender: TObject);
+    procedure Lbl_SecretWordClick(Sender: TObject);
     procedure Lbl_MenuGitHubMouseLeave(Sender: TObject);
     procedure Lbl_MenuKeysClick(Sender: TObject);
     procedure Lbl_MenuKeysMouseEnter(Sender: TObject);
@@ -100,12 +99,12 @@ type
     procedure NotResize;
     procedure Hashing;
     procedure Panel1Click(Sender: TObject);
-    procedure Panel3Click(Sender: TObject);
+    procedure Pnl_InputTextClick(Sender: TObject);
     procedure Pnl_LoadingCipherClick(Sender: TObject);
     procedure Clear(Sender: TObject);
     procedure Pnl_MemCipher2Click(Sender: TObject);
     procedure Pnl_MemCipher4Click(Sender: TObject);
-    procedure Shape7ChangeBounds(Sender: TObject);
+    procedure Shp_PassChangeBounds(Sender: TObject);
     procedure Btn_EncryptionClick(Sender: TObject);
     procedure EncriptText(password: string);
     procedure DecriptText(password: string);
@@ -172,7 +171,7 @@ end;
 
 procedure TFrm_CipherText.Lbl_MenuGitHubClick(Sender: TObject);
 begin
-   OpenURL('https://meusite.com');
+   OpenURL('https://github.com/Kennidy-L-Guimaraes/Rijndael-256-Bit-Cryptography-System');
 end;
 
 procedure TFrm_CipherText.Lbl_MenuGitHubMouseEnter(Sender: TObject);
@@ -180,7 +179,7 @@ begin
     HoverLabel(TLabel(Sender), True);
 end;
 
-procedure TFrm_CipherText.Label8Click(Sender: TObject);
+procedure TFrm_CipherText.Lbl_SecretWordClick(Sender: TObject);
 begin
 
 end;
@@ -262,7 +261,7 @@ begin
 
 end;
 
-procedure TFrm_CipherText.Panel3Click(Sender: TObject);
+procedure TFrm_CipherText.Pnl_InputTextClick(Sender: TObject);
 begin
 
 end;
@@ -296,7 +295,7 @@ begin
 
 end;
 
-procedure TFrm_CipherText.Shape7ChangeBounds(Sender: TObject);
+procedure TFrm_CipherText.Shp_PassChangeBounds(Sender: TObject);
 begin
 
 end;
@@ -438,16 +437,16 @@ begin
   ) = mrYes then
   begin
     try
-      // Obter data e hora formatadas (YYYYMMDD_HHMMSS)
+      //Get Data Time (YYYYMMDD_HHMMSS)
       DateStamp := FormatDateTime('yyyymmdd_hhnnss', Now);
 
-      // Caminho da área de trabalho
+      //Path to Documents
       DesktopPath := GetDesktopPath;
 
-      // Nome do arquivo
+      //Name File
       FileName := DesktopPath + 'Output_Rijndael_Cipher_Data_' + DateStamp + '.txt';
 
-      // Salvar conteúdo de Mem_Output
+      //Save
       OutputData := TStringList.Create;
       try
         OutputData.Assign(Mem_Output.Lines);
